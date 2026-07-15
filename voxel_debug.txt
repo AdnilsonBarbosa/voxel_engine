@@ -1,0 +1,5744 @@
+=== Renderer::init START ===
+GL_VERSION: 3.0.0 - Build 31.0.101.2140
+GL_RENDERER: Intel(R) UHD Graphics
+GL_SHADING_LANGUAGE_VERSION: 1.30 - Build 31.0.101.2140
+VAO created: 1
+[OK] after VAO
+Creating shader program...
+glCreateShader(VERTEX) => 1
+[OK] after glCompileShader
+Shader compiled OK
+glCreateShader(FRAGMENT) => 2
+[OK] after glCompileShader
+Shader compiled OK
+Shader program created: 3
+Locations: aPosition=0 uMVP=0 uColor=1
+[OK] after get locations
+VBO created: 1 (size=288)
+[OK] after VBO
+IBO created: 2 (size=72, indices=36)
+[GL ERROR 0x500] after IBO
+=== Renderer::init DONE ===
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+Frame 1: vao=1 prog=3 vbo=1 ibo=2 aPos=0
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+Frame 2: vao=1 prog=3 vbo=1 ibo=2 aPos=0
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+Frame 3: vao=1 prog=3 vbo=1 ibo=2 aPos=0
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO
+[OK] after DrawElements
+[OK] after VAP
+[GL ERROR 0x500] after bind IBO

@@ -1,0 +1,1 @@
+{"nodes": [], "edges": [{"source": "game_errors2_renderer", "target": "game_errors_renderer", "relation": "semantically_similar_to", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "game_errors2.txt", "source_location": "2", "weight": 1.0}], "hyperedges": []}

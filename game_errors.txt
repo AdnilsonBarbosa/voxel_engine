@@ -1,0 +1,206 @@
+INFO: [INFO]  OpenGL: 3.0.0 - Build 31.0.101.2140 | GLSL: 1.30 - Build 31.0.101.2140 | Intel(R) UHD Graphics
+INFO: [Renderer] pos=5 uv=0 tile=1 light=2 sky=3 wave=6 atlas=5
+INFO: [Atlas] 256x256 px, 45 tiles, 256 KB uploaded
+INFO: [Village] New world — searching for village spawn...
+INFO: [Village] Built at (-96, 80): 1905 blocks, 2935 overrides, 9 chunks affected, 4ms
+INFO: [CraftTest] === Running crafting system tests ===
+INFO: [Craft] Crafted: 4x Plank
+INFO: [CraftTest] PASS: Planks: 1 Wood → 4 Planks
+INFO: [Craft] Crafted: 4x Stick
+INFO: [CraftTest] PASS: Sticks: 2 Planks → 4 Sticks
+INFO: [Craft] Crafted: 4x Torch
+INFO: [CraftTest] PASS: Torches: Coal + Stick → 4 Torches
+INFO: [Craft] Crafted: 1x Workbench
+INFO: [CraftTest] PASS: Workbench: 4 Planks → 1 Workbench
+INFO: [Craft] Crafted: 1x Wood Pickaxe
+INFO: [CraftTest] PASS: Wood Pickaxe: 3 Planks + 2 Sticks → Pickaxe (full dur)
+INFO: [Craft] Crafted: 1x Stone Axe
+INFO: [CraftTest] PASS: Stone Axe: 3 Cobblestone + 2 Sticks → Stone Axe
+INFO: [CraftTest] PASS: Reject: no materials → NoMaterials
+INFO: [CraftTest] PASS: Station gate: WoodPickaxe invisible at Hand station
+INFO: [Furnace] Added fuel: Coal x1 (80s each)
+INFO: [Furnace] Added input: Iron Ore x2
+INFO: [Furnace] Smelted → Iron Ingot
+INFO: [Furnace] Smelted → Iron Ingot
+INFO: [CraftTest] PASS: Furnace: Coal + 2 IronOre → 2 IronIngot
+INFO: [Craft] Crafted: 4x Plank
+INFO: [CraftTest] PASS: Anti-duplication: second craft fails gracefully
+INFO: [CraftTest] PASS: Furnace: rejects non-smeltable Diamond
+INFO: [CraftTest] === Results: 11 passed, 0 failed ===
+INFO: [Craft] All tests passed.
+INFO: [INFO]  Controls: WASD=move, Space/Shift=fly up/down, mouse=look, LMB=mine, ESC=exit
+INFO: [INFO]  Spawn selector: 1=Ocean 2=Beach 3=Plains 4=Forest 5=Desert 6=Snowy 7=Mountains 8=Cave 9=Village
+INFO: [INFO]  [Village] Starter village at (-96, 80) — spawning high, gravity to surface
+INFO: [Weather] Init: Clear, expires in 2.1h
+INFO: [Structure] 1 x Cabin in chunk(-3,6) biome=Forest
+INFO: [Player] pos=(-74.5,159.4,101.5) vy=-4.9 grounded=0 below=0 feet=0 chunks=9
+INFO: [Structure] 1 x Camp in chunk(-4,4) biome=Forest
+INFO: [Player] pos=(-74.5,157.7,101.5) vy=-10.3 grounded=0 below=0 feet=0 chunks=22
+INFO: [Player] pos=(-74.5,154.7,101.5) vy=-15.9 grounded=0 below=0 feet=0 chunks=36
+INFO: [Structure] 1 x Well in chunk(-8,8) biome=Plains
+INFO: [Player] pos=(-74.5,150.5,101.5) vy=-21.4 grounded=0 below=0 feet=0 chunks=48
+INFO: [Player] pos=(-74.5,145.4,101.5) vy=-26.7 grounded=0 below=0 feet=0 chunks=60
+INFO: [Player] pos=(-74.5,139.2,101.5) vy=-31.9 grounded=0 below=0 feet=0 chunks=73
+INFO: [Player] pos=(-74.5,131.3,101.5) vy=-37.5 grounded=0 below=0 feet=0 chunks=81
+INFO: [Player] pos=(-74.5,122.7,101.5) vy=-42.9 grounded=0 below=0 feet=0 chunks=81
+INFO: [Player] pos=(-74.5,115.5,101.5) vy=-46.8 grounded=0 below=0 feet=0 chunks=81
+INFO: [Player] pos=(-74.5,107.4,101.5) vy=-50.0 grounded=0 below=0 feet=0 chunks=81
+INFO: [Player] pos=(-74.5,99.0,101.5) vy=-50.0 grounded=0 below=0 feet=0 chunks=81
+INFO: [Player] pos=(-74.5,90.7,101.5) vy=-50.0 grounded=0 below=0 feet=0 chunks=81
+INFO: [WorldTime] 10:06:00 Morning | Monday 1 January 1 (Week 1) | Spring | scale=72x | totalSecs=36388
+INFO: [Report] FPS=83.3 | chunks=81 (drawn=36 culled=45, pending=0) | verts=636884 tris=143848 | blocks=1328833
+INFO: [Report] biome@player=Plains | biomes: Plains:48 Forest:33 
+INFO: [Underground] maxHeight=79 | caveBlocksRemoved=192106 | genTime=15.13ms/chunk
+INFO: [Underground] ores: Diamond:31 Emerald:33 Gold:38 Iron:626 Copper:282 Coal:1074 
+INFO: [Lighting] totalLightMs=133.26 | litBlocks=4087 darkBlocks=1325352 | cross-chunk BFS active
+INFO: [Perf] worstFrame=33.0ms (last 5s) | bg-gen thread active
+INFO: [Textures] atlas=256x256 tiles=45 | materials=34 | drawCalls=37 | renderSubmit=0.31ms
+INFO: [Structures] loaded=3 | registry=15 types | genTime=15.13ms/chunk
+INFO: [Village] origin=(-96,80) blocks=1905 overrides=2935 | press 9 to return
+INFO: [Weather] Clear (10%) | 15.0°C Hum=50% Wind=0%(0°) | Cloud=2% Rain=0% Snow=0% Fog=0% Light=1.00 | Trans=100% Vis=200m
+INFO: [Cave] nearest cave entrance at (-74,74,103) — press 8 to drop in
+INFO: [WorldTime] 10:12:00 Morning | Monday 1 January 1 (Week 1) | Spring | scale=72x | totalSecs=36747
+INFO: [Report] FPS=93.9 | chunks=81 (drawn=50 culled=31, pending=0) | verts=636884 tris=200318 | blocks=1328833
+INFO: [Report] biome@player=Plains | biomes: Plains:48 Forest:33 
+INFO: [Underground] maxHeight=79 | caveBlocksRemoved=192106 | genTime=15.13ms/chunk
+INFO: [Underground] ores: Diamond:31 Emerald:33 Gold:38 Iron:626 Copper:282 Coal:1074 
+INFO: [Lighting] totalLightMs=133.26 | litBlocks=4087 darkBlocks=1325352 | cross-chunk BFS active
+INFO: [Perf] worstFrame=29.0ms (last 5s) | bg-gen thread active
+INFO: [Textures] atlas=256x256 tiles=45 | materials=34 | drawCalls=51 | renderSubmit=0.28ms
+INFO: [Structures] loaded=3 | registry=15 types | genTime=15.13ms/chunk
+INFO: [Village] origin=(-96,80) blocks=1905 overrides=2935 | press 9 to return
+INFO: [Weather] Clear (10%) | 16.0°C Hum=50% Wind=0%(-0°) | Cloud=2% Rain=0% Snow=0% Fog=0% Light=1.00 | Trans=100% Vis=200m
+INFO: [Mine] Block removed at (-66,71,96)
+INFO: [WorldTime] 10:18:01 Morning | Monday 1 January 1 (Week 1) | Spring | scale=72x | totalSecs=37108
+INFO: [Report] FPS=67.6 | chunks=81 (drawn=45 culled=36, pending=0) | verts=636908 tris=181252 | blocks=1328833
+INFO: [Report] biome@player=Plains | biomes: Plains:48 Forest:33 
+INFO: [Underground] maxHeight=79 | caveBlocksRemoved=192106 | genTime=15.13ms/chunk
+INFO: [Underground] ores: Diamond:31 Emerald:33 Gold:38 Iron:626 Copper:282 Coal:1074 
+INFO: [Lighting] totalLightMs=131.11 | litBlocks=4087 darkBlocks=1325351 | cross-chunk BFS active
+INFO: [Perf] worstFrame=29.0ms (last 5s) | bg-gen thread active
+INFO: [Textures] atlas=256x256 tiles=45 | materials=34 | drawCalls=46 | renderSubmit=0.46ms
+INFO: [Structures] loaded=3 | registry=15 types | genTime=15.13ms/chunk
+INFO: [Village] origin=(-96,80) blocks=1905 overrides=2936 | press 9 to return
+INFO: [Weather] Clear (10%) | 16.0°C Hum=50% Wind=0%(-1°) | Cloud=2% Rain=0% Snow=0% Fog=0% Light=1.00 | Trans=100% Vis=200m
+INFO: [Mine] Block removed at (-66,71,97)
+INFO: [Mine] Block removed at (-65,71,93)
+INFO: [Craft] +1 Dirt
+INFO: [Mine] Block removed at (-65,71,94)
+INFO: [WorldTime] 10:24:01 Morning | Monday 1 January 1 (Week 1) | Spring | scale=72x | totalSecs=37468
+INFO: [Report] FPS=77.1 | chunks=81 (drawn=35 culled=46, pending=0) | verts=636928 tris=157536 | blocks=1328833
+INFO: [Report] biome@player=Plains | biomes: Plains:48 Forest:33 
+INFO: [Underground] maxHeight=79 | caveBlocksRemoved=192106 | genTime=15.13ms/chunk
+INFO: [Underground] ores: Diamond:31 Emerald:33 Gold:38 Iron:626 Copper:282 Coal:1074 
+INFO: [Lighting] totalLightMs=131.68 | litBlocks=4087 darkBlocks=1325348 | cross-chunk BFS active
+INFO: [Perf] worstFrame=29.0ms (last 5s) | bg-gen thread active
+INFO: [Textures] atlas=256x256 tiles=45 | materials=34 | drawCalls=36 | renderSubmit=0.19ms
+INFO: [Structures] loaded=3 | registry=15 types | genTime=15.13ms/chunk
+INFO: [Village] origin=(-96,80) blocks=1905 overrides=2939 | press 9 to return
+INFO: [Weather] Clear (10%) | 16.0°C Hum=50% Wind=0%(-1°) | Cloud=2% Rain=0% Snow=0% Fog=0% Light=1.00 | Trans=100% Vis=200m
+INFO: [Mine] Block removed at (-64,71,94)
+INFO: [Mine] Block removed at (-66,71,93)
+INFO: [Craft] +1 Dirt
+INFO: [Mine] Block removed at (-67,72,92)
+INFO: [Mine] Block removed at (-68,72,93)
+INFO: [Mine] Block removed at (-69,72,92)
+INFO: [Craft] +1 Gravel
+INFO: [Mine] Block removed at (-69,72,93)
+INFO: [Craft] +1 Dirt
+INFO: [Mine] Block removed at (-70,72,93)
+INFO: [Craft] +1 Gravel
+INFO: [Mine] Block removed at (-70,72,92)
+INFO: [Craft] +1 Gravel
+INFO: [WorldTime] 10:30:00 Morning | Monday 1 January 1 (Week 1) | Spring | scale=72x | totalSecs=37829
+INFO: [Report] FPS=75.8 | chunks=81 (drawn=42 culled=39, pending=0) | verts=636920 tris=181000 | blocks=1328833
+INFO: [Report] biome@player=Plains | biomes: Plains:48 Forest:33 
+INFO: [Underground] maxHeight=79 | caveBlocksRemoved=192106 | genTime=15.13ms/chunk
+INFO: [Underground] ores: Diamond:31 Emerald:33 Gold:38 Iron:626 Copper:282 Coal:1074 
+INFO: [Lighting] totalLightMs=131.49 | litBlocks=4085 darkBlocks=1325342 | cross-chunk BFS active
+INFO: [Perf] worstFrame=29.0ms (last 5s) | bg-gen thread active
+INFO: [Textures] atlas=256x256 tiles=45 | materials=34 | drawCalls=43 | renderSubmit=0.20ms
+INFO: [Structures] loaded=3 | registry=15 types | genTime=15.13ms/chunk
+INFO: [Village] origin=(-96,80) blocks=1905 overrides=2947 | press 9 to return
+INFO: [Weather] Clear (10%) | 16.0°C Hum=50% Wind=0%(-2°) | Cloud=2% Rain=0% Snow=0% Fog=0% Light=1.00 | Trans=100% Vis=200m
+INFO: [Mine] Block removed at (-67,71,96)
+INFO: [WorldTime] 10:36:00 Morning | Monday 1 January 1 (Week 1) | Spring | scale=72x | totalSecs=38189
+INFO: [Report] FPS=72.2 | chunks=81 (drawn=51 culled=30, pending=0) | verts=636928 tris=212560 | blocks=1328833
+INFO: [Report] biome@player=Plains | biomes: Plains:48 Forest:33 
+INFO: [Underground] maxHeight=79 | caveBlocksRemoved=192106 | genTime=15.13ms/chunk
+INFO: [Underground] ores: Diamond:31 Emerald:33 Gold:38 Iron:626 Copper:282 Coal:1074 
+INFO: [Lighting] totalLightMs=131.44 | litBlocks=4085 darkBlocks=1325341 | cross-chunk BFS active
+INFO: [Perf] worstFrame=28.0ms (last 5s) | bg-gen thread active
+INFO: [Textures] atlas=256x256 tiles=45 | materials=34 | drawCalls=52 | renderSubmit=0.39ms
+INFO: [Structures] loaded=3 | registry=15 types | genTime=15.13ms/chunk
+INFO: [Village] origin=(-96,80) blocks=1905 overrides=2948 | press 9 to return
+INFO: [Weather] Clear (10%) | 16.0°C Hum=50% Wind=0%(-2°) | Cloud=2% Rain=0% Snow=0% Fog=0% Light=1.00 | Trans=100% Vis=200m
+INFO: [Mine] Block removed at (-67,70,96)
+INFO: [Craft] +1 Dirt
+INFO: [Mine] Block removed at (-67,69,96)
+INFO: [Craft] +1 Dirt
+INFO: [Mine] Block removed at (-67,68,96)
+INFO: [Craft] +1 Dirt
+INFO: [WorldTime] 10:42:00 Morning | Monday 1 January 1 (Week 1) | Spring | scale=72x | totalSecs=38551
+INFO: [Report] FPS=75.1 | chunks=81 (drawn=29 culled=52, pending=0) | verts=636976 tris=134404 | blocks=1328833
+INFO: [Report] biome@player=Plains | biomes: Plains:48 Forest:33 
+INFO: [Underground] maxHeight=79 | caveBlocksRemoved=192106 | genTime=15.13ms/chunk
+INFO: [Underground] ores: Diamond:31 Emerald:33 Gold:38 Iron:626 Copper:282 Coal:1074 
+INFO: [Lighting] totalLightMs=132.49 | litBlocks=4085 darkBlocks=1325338 | cross-chunk BFS active
+INFO: [Perf] worstFrame=30.0ms (last 5s) | bg-gen thread active
+INFO: [Textures] atlas=256x256 tiles=45 | materials=34 | drawCalls=30 | renderSubmit=0.19ms
+INFO: [Structures] loaded=3 | registry=15 types | genTime=15.13ms/chunk
+INFO: [Village] origin=(-96,80) blocks=1905 overrides=2951 | press 9 to return
+INFO: [Weather] Clear (10%) | 16.0°C Hum=50% Wind=0%(-2°) | Cloud=2% Rain=0% Snow=0% Fog=0% Light=1.00 | Trans=100% Vis=200m
+INFO: [WorldTime] 10:48:00 Morning | Monday 1 January 1 (Week 1) | Spring | scale=72x | totalSecs=38911
+INFO: [Report] FPS=68.1 | chunks=81 (drawn=35 culled=46, pending=0) | verts=636976 tris=128478 | blocks=1328833
+INFO: [Report] biome@player=Plains | biomes: Plains:48 Forest:33 
+INFO: [Underground] maxHeight=79 | caveBlocksRemoved=192106 | genTime=15.13ms/chunk
+INFO: [Underground] ores: Diamond:31 Emerald:33 Gold:38 Iron:626 Copper:282 Coal:1074 
+INFO: [Lighting] totalLightMs=132.49 | litBlocks=4085 darkBlocks=1325338 | cross-chunk BFS active
+INFO: [Perf] worstFrame=28.0ms (last 5s) | bg-gen thread active
+INFO: [Textures] atlas=256x256 tiles=45 | materials=34 | drawCalls=36 | renderSubmit=0.32ms
+INFO: [Structures] loaded=3 | registry=15 types | genTime=15.13ms/chunk
+INFO: [Village] origin=(-96,80) blocks=1905 overrides=2951 | press 9 to return
+INFO: [Weather] Clear (10%) | 16.0°C Hum=50% Wind=0%(-2°) | Cloud=2% Rain=0% Snow=0% Fog=0% Light=1.00 | Trans=100% Vis=200m
+INFO: [WorldTime] 10:54:00 Morning | Monday 1 January 1 (Week 1) | Spring | scale=72x | totalSecs=39271
+INFO: [Report] FPS=69.7 | chunks=81 (drawn=51 culled=30, pending=0) | verts=636976 tris=172556 | blocks=1328833
+INFO: [Report] biome@player=Plains | biomes: Plains:48 Forest:33 
+INFO: [Underground] maxHeight=79 | caveBlocksRemoved=192106 | genTime=15.13ms/chunk
+INFO: [Underground] ores: Diamond:31 Emerald:33 Gold:38 Iron:626 Copper:282 Coal:1074 
+INFO: [Lighting] totalLightMs=132.49 | litBlocks=4085 darkBlocks=1325338 | cross-chunk BFS active
+INFO: [Perf] worstFrame=28.0ms (last 5s) | bg-gen thread active
+INFO: [Textures] atlas=256x256 tiles=45 | materials=34 | drawCalls=52 | renderSubmit=0.58ms
+INFO: [Structures] loaded=3 | registry=15 types | genTime=15.13ms/chunk
+INFO: [Village] origin=(-96,80) blocks=1905 overrides=2951 | press 9 to return
+INFO: [Weather] Clear (10%) | 16.0°C Hum=50% Wind=0%(-2°) | Cloud=2% Rain=0% Snow=0% Fog=0% Light=1.00 | Trans=100% Vis=200m
+INFO: [Mine] Block removed at (-73,71,105)
+INFO: [Craft] +1 Cobblestone
+INFO: [Mine] Block removed at (-73,71,106)
+INFO: [Craft] +1 Dirt
+INFO: [Mine] Block removed at (-74,71,106)
+INFO: [Craft] +1 Gravel
+INFO: [Mine] Block removed at (-74,70,106)
+INFO: [Craft] +1 Dirt
+INFO: [WorldTime] 11:00:01 Morning | Monday 1 January 1 (Week 1) | Spring | scale=72x | totalSecs=39634
+INFO: [Report] FPS=63.5 | chunks=81 (drawn=44 culled=37, pending=0) | verts=637024 tris=148326 | blocks=1328833
+INFO: [Report] biome@player=Plains | biomes: Plains:48 Forest:33 
+INFO: [Underground] maxHeight=79 | caveBlocksRemoved=192106 | genTime=15.13ms/chunk
+INFO: [Underground] ores: Diamond:31 Emerald:33 Gold:38 Iron:626 Copper:282 Coal:1074 
+INFO: [Lighting] totalLightMs=132.54 | litBlocks=4085 darkBlocks=1325334 | cross-chunk BFS active
+INFO: [Perf] worstFrame=30.0ms (last 5s) | bg-gen thread active
+INFO: [Textures] atlas=256x256 tiles=45 | materials=34 | drawCalls=45 | renderSubmit=0.64ms
+INFO: [Structures] loaded=3 | registry=15 types | genTime=15.13ms/chunk
+INFO: [Village] origin=(-96,80) blocks=1905 overrides=2955 | press 9 to return
+INFO: [Weather] Clear (10%) | 16.0°C Hum=50% Wind=0%(-2°) | Cloud=2% Rain=0% Snow=0% Fog=0% Light=1.00 | Trans=100% Vis=200m
+INFO: [Mine] Block removed at (-71,71,112)
+INFO: [WorldTime] 11:06:00 Morning | Monday 1 January 1 (Week 1) | Spring | scale=72x | totalSecs=39994
+INFO: [Report] FPS=70.1 | chunks=81 (drawn=29 culled=52, pending=0) | verts=637016 tris=115958 | blocks=1328833
+INFO: [Report] biome@player=Plains | biomes: Plains:48 Forest:33 
+INFO: [Underground] maxHeight=79 | caveBlocksRemoved=192106 | genTime=15.13ms/chunk
+INFO: [Underground] ores: Diamond:31 Emerald:33 Gold:38 Iron:626 Copper:282 Coal:1074 
+INFO: [Lighting] totalLightMs=132.31 | litBlocks=4084 darkBlocks=1325334 | cross-chunk BFS active
+INFO: [Perf] worstFrame=30.0ms (last 5s) | bg-gen thread active
+INFO: [Textures] atlas=256x256 tiles=45 | materials=34 | drawCalls=30 | renderSubmit=0.18ms
+INFO: [Structures] loaded=3 | registry=15 types | genTime=15.13ms/chunk
+INFO: [Village] origin=(-96,80) blocks=1905 overrides=2956 | press 9 to return
+INFO: [Weather] Clear (10%) | 16.0°C Hum=50% Wind=0%(-2°) | Cloud=2% Rain=0% Snow=0% Fog=0% Light=1.00 | Trans=100% Vis=200m
+INFO: [CraftSave] Saved to world_craft.dat

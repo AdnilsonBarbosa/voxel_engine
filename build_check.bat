@@ -1,0 +1,3 @@
+@echo off
+cl /nologo /std:c++17 /W3 /O2 /EHsc /I"src" /I"src/rendering" /I"src/world" /I"src/weather" /I"src/util" /I"src/physics" /I"src/craft" /I"src/ui" /I"C:/Users/barbo/My project/voxel_engine/deps/SDL2/include" src/main.cpp src/rendering/sky.cpp src/rendering/weather_particles.cpp src/rendering/renderer.cpp src/rendering/debug_overlay.cpp src/world/chunk_manager.cpp /link /LIBPATH:"C:/Users/barbo/My project/voxel_engine/deps/SDL2/lib/x64" SDL2.lib SDL2main.lib opengl32.lib /SUBSYSTEM:WINDOWS /OUT:voxel_engine.exe > build_out.txt 2>&1
+echo Exit: %ERRORLEVEL%

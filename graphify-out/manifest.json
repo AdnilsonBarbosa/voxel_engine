@@ -1,0 +1,292 @@
+{
+  ".mimocode/package.json": {
+    "mtime": 1784031710.156661,
+    "ast_hash": "55ffffd9c249537820ce8e20280748a9",
+    "semantic_hash": "55ffffd9c249537820ce8e20280748a9"
+  },
+  "build_windows.ps1": {
+    "mtime": 1784033264.5677986,
+    "ast_hash": "4600d2efd2a2181b9d0dbe064a8484c2",
+    "semantic_hash": "4600d2efd2a2181b9d0dbe064a8484c2"
+  },
+  "src/core/gl_ext.h": {
+    "mtime": 1784034922.4987469,
+    "ast_hash": "802e3407e5ce7ea80d4a96de5bed0d9c",
+    "semantic_hash": "802e3407e5ce7ea80d4a96de5bed0d9c"
+  },
+  "src/core/platform.h": {
+    "mtime": 1783949485.7491372,
+    "ast_hash": "cb4f382e68a6f554fa49f93972d03d11",
+    "semantic_hash": "cb4f382e68a6f554fa49f93972d03d11"
+  },
+  "src/core/renderer.cpp": {
+    "mtime": 1784024604.609506,
+    "ast_hash": "17719c3203ebd05c184a6e54798f7499",
+    "semantic_hash": "17719c3203ebd05c184a6e54798f7499"
+  },
+  "src/core/renderer.h": {
+    "mtime": 1784024612.4256864,
+    "ast_hash": "28a308189dba3482293894a4f2e43627",
+    "semantic_hash": "28a308189dba3482293894a4f2e43627"
+  },
+  "src/main.cpp": {
+    "mtime": 1784035567.2426217,
+    "ast_hash": "41461c171629cfa174bc379ec6d5584f",
+    "semantic_hash": "41461c171629cfa174bc379ec6d5584f"
+  },
+  "src/rendering/debug_overlay.cpp": {
+    "mtime": 1784034912.927047,
+    "ast_hash": "63d53bfad001c49c02e87c3ab4704e05",
+    "semantic_hash": "63d53bfad001c49c02e87c3ab4704e05"
+  },
+  "src/rendering/debug_overlay.h": {
+    "mtime": 1784032126.8964934,
+    "ast_hash": "0b0abed9098cd0e7c7447cd79b5aaccb",
+    "semantic_hash": "0b0abed9098cd0e7c7447cd79b5aaccb"
+  },
+  "src/rendering/frustum.h": {
+    "mtime": 1783965221.4374437,
+    "ast_hash": "fc379a28787adfce75c1810103b00643",
+    "semantic_hash": "fc379a28787adfce75c1810103b00643"
+  },
+  "src/rendering/shader.cpp": {
+    "mtime": 1783958867.209682,
+    "ast_hash": "cbdb2cbce070046d5c83b31e335f7c81",
+    "semantic_hash": "cbdb2cbce070046d5c83b31e335f7c81"
+  },
+  "src/rendering/shader.h": {
+    "mtime": 1783958860.146923,
+    "ast_hash": "9d232b79fba6a7f70626c3e6adc81956",
+    "semantic_hash": "9d232b79fba6a7f70626c3e6adc81956"
+  },
+  "src/rendering/sky.cpp": {
+    "mtime": 1784031738.815508,
+    "ast_hash": "b9aaa604b150e90222e89fd59af98644",
+    "semantic_hash": "b9aaa604b150e90222e89fd59af98644"
+  },
+  "src/rendering/sky.h": {
+    "mtime": 1784031698.0993872,
+    "ast_hash": "d3387f1b5ca21abe1bef0a10acf6988c",
+    "semantic_hash": "d3387f1b5ca21abe1bef0a10acf6988c"
+  },
+  "src/rendering/texture_atlas.cpp": {
+    "mtime": 1784026776.344698,
+    "ast_hash": "1aaf55ca8ef75f6564ade4928de30613",
+    "semantic_hash": "1aaf55ca8ef75f6564ade4928de30613"
+  },
+  "src/rendering/texture_atlas.h": {
+    "mtime": 1784026765.7808888,
+    "ast_hash": "99bf552728eee0b5563b5a46cbf8a34e",
+    "semantic_hash": "99bf552728eee0b5563b5a46cbf8a34e"
+  },
+  "src/rendering/weather_particles.cpp": {
+    "mtime": 1784036369.3776085,
+    "ast_hash": "82a63d0b087a891625b6377bf2d2782c",
+    "semantic_hash": "82a63d0b087a891625b6377bf2d2782c"
+  },
+  "src/rendering/weather_particles.h": {
+    "mtime": 1784033417.5444615,
+    "ast_hash": "5e8f5f0a39f9b93f374bb431a0a2805b",
+    "semantic_hash": "5e8f5f0a39f9b93f374bb431a0a2805b"
+  },
+  "src/time/game_calendar.h": {
+    "mtime": 1784029757.5027268,
+    "ast_hash": "956380a0aa333dc7891a83d411f87533",
+    "semantic_hash": "956380a0aa333dc7891a83d411f87533"
+  },
+  "src/time/time_defs.h": {
+    "mtime": 1784029724.4614582,
+    "ast_hash": "172e9c0f261df78f89ea1dd2bc7bae0c",
+    "semantic_hash": "172e9c0f261df78f89ea1dd2bc7bae0c"
+  },
+  "src/time/time_events.h": {
+    "mtime": 1784029733.927773,
+    "ast_hash": "3cffec63cb4ea41866b80e3f6d2d02db",
+    "semantic_hash": "3cffec63cb4ea41866b80e3f6d2d02db"
+  },
+  "src/time/time_manager.h": {
+    "mtime": 1784029811.0634737,
+    "ast_hash": "9e304bfdfb18f2cc86c6c554d96d2720",
+    "semantic_hash": "9e304bfdfb18f2cc86c6c554d96d2720"
+  },
+  "src/time/world_clock.h": {
+    "mtime": 1784029773.4639277,
+    "ast_hash": "97fedc971864dd5844739eafad512329",
+    "semantic_hash": "97fedc971864dd5844739eafad512329"
+  },
+  "src/utils/math_utils.h": {
+    "mtime": 1784025394.3702748,
+    "ast_hash": "f3446aee34da52de6e7e4f6dabc966d7",
+    "semantic_hash": "f3446aee34da52de6e7e4f6dabc966d7"
+  },
+  "src/weather/climate_region.h": {
+    "mtime": 1784030744.0434318,
+    "ast_hash": "a31ae9f3ea555121584231322ea03dec",
+    "semantic_hash": "a31ae9f3ea555121584231322ea03dec"
+  },
+  "src/weather/rain_sound.h": {
+    "mtime": 1784033166.4224584,
+    "ast_hash": "2615916ec713cfd9d107e77e3662cb81",
+    "semantic_hash": "2615916ec713cfd9d107e77e3662cb81"
+  },
+  "src/weather/weather_config.h": {
+    "mtime": 1784035245.6231973,
+    "ast_hash": "3ff18c7c12f79a4e6cf7acfe5a3f881b",
+    "semantic_hash": "3ff18c7c12f79a4e6cf7acfe5a3f881b"
+  },
+  "src/weather/weather_controller.h": {
+    "mtime": 1784030780.16281,
+    "ast_hash": "f520ccb30f35046fdb38e0ac451b96c8",
+    "semantic_hash": "f520ccb30f35046fdb38e0ac451b96c8"
+  },
+  "src/weather/weather_defs.h": {
+    "mtime": 1784035281.3950112,
+    "ast_hash": "4485cc3836a417ac68b334a40525b068",
+    "semantic_hash": "4485cc3836a417ac68b334a40525b068"
+  },
+  "src/weather/weather_events.h": {
+    "mtime": 1784030719.3941522,
+    "ast_hash": "76e1bb80fae4b1be2ba5a5c3fa8ba901",
+    "semantic_hash": "76e1bb80fae4b1be2ba5a5c3fa8ba901"
+  },
+  "src/weather/weather_manager.h": {
+    "mtime": 1784033727.4686692,
+    "ast_hash": "bf2f9a5cb4d2b8ce97646802bf8b89b4",
+    "semantic_hash": "bf2f9a5cb4d2b8ce97646802bf8b89b4"
+  },
+  "src/world/biome.h": {
+    "mtime": 1783967440.0181234,
+    "ast_hash": "e9f016b77e712da442b76d1138368e4b",
+    "semantic_hash": "e9f016b77e712da442b76d1138368e4b"
+  },
+  "src/world/block_material.h": {
+    "mtime": 1784026782.3648055,
+    "ast_hash": "91d62668b47deec070397663b9a5adc2",
+    "semantic_hash": "91d62668b47deec070397663b9a5adc2"
+  },
+  "src/world/block_types.h": {
+    "mtime": 1784026762.7334003,
+    "ast_hash": "ec6c1c85d2fe8e1bbbb66473a128ab6a",
+    "semantic_hash": "ec6c1c85d2fe8e1bbbb66473a128ab6a"
+  },
+  "src/world/cave_gen.h": {
+    "mtime": 1783978821.4897983,
+    "ast_hash": "7cc14c8455f04b4d0d284fc864290378",
+    "semantic_hash": "7cc14c8455f04b4d0d284fc864290378"
+  },
+  "src/world/chunk.cpp": {
+    "mtime": 1784028897.5937126,
+    "ast_hash": "2fc229f4fcca9a07efb9c88b2a0538e8",
+    "semantic_hash": "2fc229f4fcca9a07efb9c88b2a0538e8"
+  },
+  "src/world/chunk.h": {
+    "mtime": 1784028912.6437774,
+    "ast_hash": "d718db0b3854dc747c1087445682746e",
+    "semantic_hash": "d718db0b3854dc747c1087445682746e"
+  },
+  "src/world/chunk_manager.cpp": {
+    "mtime": 1784028930.939454,
+    "ast_hash": "7d60b4cdef9b3c876d86de377dbb7e82",
+    "semantic_hash": "7d60b4cdef9b3c876d86de377dbb7e82"
+  },
+  "src/world/chunk_manager.h": {
+    "mtime": 1784028921.371127,
+    "ast_hash": "d7694ee5f57b86e1b1d40e45a63eb5e0",
+    "semantic_hash": "d7694ee5f57b86e1b1d40e45a63eb5e0"
+  },
+  "src/world/decoration.h": {
+    "mtime": 1783967167.6383986,
+    "ast_hash": "75b0bcaacccefe8408a72a47473d5753",
+    "semantic_hash": "75b0bcaacccefe8408a72a47473d5753"
+  },
+  "src/world/lighting.h": {
+    "mtime": 1784028844.6075182,
+    "ast_hash": "2369b51da64e3b78af126ed9bc0546ea",
+    "semantic_hash": "2369b51da64e3b78af126ed9bc0546ea"
+  },
+  "src/world/noise.h": {
+    "mtime": 1783978563.0603414,
+    "ast_hash": "47cee8d4382cdf3a4d9e0cbf7a93189e",
+    "semantic_hash": "47cee8d4382cdf3a4d9e0cbf7a93189e"
+  },
+  "src/world/ore_gen.h": {
+    "mtime": 1783978643.9431033,
+    "ast_hash": "1494a694647b4e42afc026340521d60d",
+    "semantic_hash": "1494a694647b4e42afc026340521d60d"
+  },
+  "src/world/starter_village.h": {
+    "mtime": 1784035303.662012,
+    "ast_hash": "9f7757b4bed097ff90bae2cba0024cdc",
+    "semantic_hash": "9f7757b4bed097ff90bae2cba0024cdc"
+  },
+  "src/world/structure_gen.h": {
+    "mtime": 1784026789.0855815,
+    "ast_hash": "e56d0bdc7a7190948506b59289c0bad6",
+    "semantic_hash": "e56d0bdc7a7190948506b59289c0bad6"
+  },
+  "src/world/terrain_gen.h": {
+    "mtime": 1783982697.3818796,
+    "ast_hash": "ecde579a962fbac5ce064769d209c9d9",
+    "semantic_hash": "ecde579a962fbac5ce064769d209c9d9"
+  },
+  "src/world/world_save.h": {
+    "mtime": 1784026694.8712485,
+    "ast_hash": "d1a2b6d1d121c384c8d79ff4b60e8e3f",
+    "semantic_hash": "d1a2b6d1d121c384c8d79ff4b60e8e3f"
+  },
+  "src/world/worldgen_common.h": {
+    "mtime": 1783982461.6610522,
+    "ast_hash": "59a7ce0b9b47130c2822cf546d6aaa7e",
+    "semantic_hash": "59a7ce0b9b47130c2822cf546d6aaa7e"
+  },
+  "tests/biome_census.cpp": {
+    "mtime": 1783967504.5039961,
+    "ast_hash": "7e35d03371f9b247b8924208e9f0c1a4",
+    "semantic_hash": "7e35d03371f9b247b8924208e9f0c1a4"
+  },
+  "tests/structure_census.cpp": {
+    "mtime": 1783983510.1928515,
+    "ast_hash": "321138ea7d9922e23f700db82f2cb1f6",
+    "semantic_hash": "321138ea7d9922e23f700db82f2cb1f6"
+  },
+  "tests/terrain_check.cpp": {
+    "mtime": 1783966512.6658332,
+    "ast_hash": "784924f628f631bed0ade00e357142bc",
+    "semantic_hash": "784924f628f631bed0ade00e357142bc"
+  },
+  "tests/test_render.cpp": {
+    "mtime": 1783959210.2202904,
+    "ast_hash": "d1244b35485de3da932fa8c0fd184f74",
+    "semantic_hash": "d1244b35485de3da932fa8c0fd184f74"
+  },
+  "assets/README.md": {
+    "mtime": 1783981636.3778958,
+    "ast_hash": "2c8521aaf30cd68412d35084bd33baa9",
+    "semantic_hash": "2c8521aaf30cd68412d35084bd33baa9"
+  },
+  "game_errors.txt": {
+    "mtime": 1784036079.220257,
+    "ast_hash": "d793dbdea5d06386c61f89ff4f8ce9de",
+    "semantic_hash": "d793dbdea5d06386c61f89ff4f8ce9de"
+  },
+  "game_errors2.txt": {
+    "mtime": 1784036266.6721516,
+    "ast_hash": "156919b79ffc025ec9ce9698be9a0518",
+    "semantic_hash": "156919b79ffc025ec9ce9698be9a0518"
+  },
+  "game_output.txt": {
+    "mtime": 1784036071.1134162,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "game_output2.txt": {
+    "mtime": 1784036261.0366862,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "voxel_debug.txt": {
+    "mtime": 1783960264.4623263,
+    "ast_hash": "b3e39a6bd5c36a70c419dfee2ff6fa7e",
+    "semantic_hash": "b3e39a6bd5c36a70c419dfee2ff6fa7e"
+  }
+}
