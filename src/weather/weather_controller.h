@@ -61,7 +61,13 @@ public:
     double pickDurationSecs(WeatherType t, uint32_t& rng) const {
         const auto& p = WEATHER_PROFILES[(int)t];
         float hours = p.minDurHours + lcgf(rng) * (p.maxDurHours - p.minDurHours);
-        return (double)hours * 3600.0;
+#ifdef __ANDROID__
+        // Short cycle on Android builds so weather can be tested quickly.
+        const float hold = (t == WeatherType::Snow || t == WeatherType::Blizzard) ? 0.50f : 0.35f;
+#else
+        const float hold = 1.0f;
+#endif
+        return (double)(hours * hold) * 3600.0;
     }
 
     // Compute target WeatherState from type + intensity + environment.

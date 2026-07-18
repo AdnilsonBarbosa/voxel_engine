@@ -91,6 +91,16 @@ public:
 
     double totalGameSecs() const { return clock_.totalSecs(); }
 
+    // Keep the loaded DAY (and therefore season/year) but reset the clock to a
+    // fixed hour — sessions resume on the same calendar day at a bright hour.
+    void normalizeToHour(int hour) {
+        const long long days = (long long)(clock_.totalSecs() / SECS_PER_DAY);
+        const double t = (double)days * SECS_PER_DAY + (double)hour * SECS_PER_HOUR;
+        clock_.setTotalSecs(t);
+        calendar_.update(t);
+        prev_ = calendar_.state();
+    }
+
     // ── Save / Load ───────────────────────────────────────────────────────────
     // Binary format (20 bytes):  magic[4] | version(u32) | totalSecs(d64) | scale(f32)
     bool load(const char* path) {

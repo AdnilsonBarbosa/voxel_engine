@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include "chunk.h"
 #include "biome.h"
 #include "frustum.h"
@@ -13,8 +13,13 @@
 #include <deque>
 #include <atomic>
 #include <vector>
+#include <algorithm>
 
-static constexpr int VIEW_DISTANCE = 4; // chunks in each direction
+#ifdef __ANDROID__
+static constexpr int VIEW_DISTANCE = 3; // 49 chunks: safer mobile memory/frame budget
+#else
+static constexpr int VIEW_DISTANCE = 4;
+#endif
 
 struct ChunkKey {
     int cx, cz;
@@ -39,9 +44,14 @@ public:
     // Draw chunks that pass the frustum test (shader active, uMVP uploaded).
     void render(const Frustum& fr);
 
+    // Runtime quality control: changes streaming radius only; terrain generation is untouched.
+    void setViewDistance(int radius) { viewDistance_ = (std::max)(2, (std::min)(5, radius)); }
+    int viewDistance() const { return viewDistance_; }
+
     // World-space block operations. Return false if chunk not loaded.
     bool    setBlock(float wx, float wy, float wz, uint8_t type);
     uint8_t getBlock(float wx, float wy, float wz) const;
+    bool    isLoadedAt(int wx, int wy, int wz) const;
 
     int loadedChunkCount() const { return (int)chunks.size(); }
     int drawnChunkCount()  const { return statDrawn;  }
@@ -87,6 +97,7 @@ public:
 
 private:
     unsigned seed;
+    int viewDistance_ = VIEW_DISTANCE;
     // Loaded chunks — MAIN THREAD ONLY (owns GL resources).
     std::unordered_map<ChunkKey, std::unique_ptr<Chunk>, ChunkKeyHash> chunks;
 
@@ -105,6 +116,8 @@ private:
     };
 
     WorldSave                          ws;              // world persistence (main thread)
+    bool     savePending = false;   // edits waiting for the debounced write
+    uint32_t lastEditMs  = 0;       // SDL_GetTicks() of the latest edit
     std::thread                        worker;
     std::mutex                         qmutex;
     std::condition_variable            qcv;

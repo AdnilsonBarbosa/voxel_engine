@@ -22,8 +22,9 @@ namespace Structures {
 enum Type : uint8_t {
     S_NONE,
     S_CABIN, S_HOUSE, S_RUINS, S_TOWER, S_WELL, S_CAMP, S_BRIDGE,
-    // Reserved — registry present, generators to come (architecture ready):
     S_VILLAGE, S_TEMPLE, S_DUNGEON, S_MINE, S_CASTLE, S_FORTRESS, S_PORTAL,
+    // Natural landmarks (compact-map POIs)
+    S_MONOLITH, S_ARCH, S_GREATTREE,
     S_COUNT
 };
 
@@ -50,12 +51,15 @@ static const Def REGISTRY[S_COUNT] = {
     {"Camp",         5,  0.35f, bmask(Biomes::BIOME_FOREST),    true},
     {"Bridge",       6,  0.25f, bmask(Biomes::BIOME_PLAINS),    true},
     {"Village",     38,  0.55f, bmask(Biomes::BIOME_PLAINS), true},
-    {"Temple",      11,  0.65f, bmask(Biomes::BIOME_DESERT), true},
+    {"Temple",      11,  0.40f, bmask(Biomes::BIOME_DESERT), true},
     {"Dungeon",      8,  0.80f, 0xFF, true},   // underground, any land
     {"Abandoned Mine",6, 0.80f, 0xFF, true},   // underground, any land
     {"Castle",      16,  0.85f, (uint8_t)(bmask(Biomes::BIOME_PLAINS)|bmask(Biomes::BIOME_MOUNTAINS)), true},
     {"Fortress",    14,  0.85f, (uint8_t)(bmask(Biomes::BIOME_MOUNTAINS)|bmask(Biomes::BIOME_DESERT)), true},
     {"Portal",       5,  0.80f, 0xFF, true},   // any land
+    {"Monolith",     7,  0.55f, 0xFF, true},   // giant standing stones
+    {"Stone Arch",  10,  0.50f, (uint8_t)(bmask(Biomes::BIOME_PLAINS)|bmask(Biomes::BIOME_DESERT)|bmask(Biomes::BIOME_MOUNTAINS)), true},
+    {"Great Tree",  13,  0.60f, (uint8_t)(bmask(Biomes::BIOME_FOREST)|bmask(Biomes::BIOME_PLAINS)), true},
 };
 
 inline const Def& def(Type t)  { return REGISTRY[t]; }
@@ -82,16 +86,26 @@ inline Type candidateFor(Biomes::Biome b, uint32_t h) {
     if (s < 6) return S_PORTAL;
     if (s < 8 && (b == Biomes::BIOME_PLAINS || b == Biomes::BIOME_MOUNTAINS)) return S_CASTLE;
     if (s < 10 && (b == Biomes::BIOME_MOUNTAINS || b == Biomes::BIOME_DESERT)) return S_FORTRESS;
+    if (s < 16) return S_MONOLITH;                             // standing stones
+    if (s < 21 && (b == Biomes::BIOME_PLAINS || b == Biomes::BIOME_DESERT ||
+                   b == Biomes::BIOME_MOUNTAINS)) return S_ARCH;
 
     switch (b) {
-        case Biomes::BIOME_FOREST:    return (h & 1) ? S_CABIN : S_CAMP;
+        case Biomes::BIOME_FOREST:
+            return ((h & 7) == 0) ? S_GREATTREE
+                 : (h & 1)        ? S_CABIN : S_CAMP;
         case Biomes::BIOME_SNOWY:     return S_CABIN;
         case Biomes::BIOME_MOUNTAINS: return S_TOWER;
         case Biomes::BIOME_PLAINS:
-            // S_VILLAGE is disabled: replaced by the unique StarterVillage near spawn.
-            switch ((h >> 1) % 3) { case 0: return S_HOUSE; case 1: return S_WELL; default: return S_BRIDGE; }
+            switch ((h >> 1) % 5) {
+                case 0:  return ((h >> 9) & 1) ? S_VILLAGE : S_HOUSE; // sparse hamlets
+                case 1:  return S_WELL;
+                case 2:  return S_BRIDGE;
+                case 3:  return S_GREATTREE;
+                default: return S_HOUSE;
+            }
         case Biomes::BIOME_DESERT:
-            return ((h >> 3) % 3 == 0) ? S_TEMPLE : S_RUINS;   // ~1 in 3 desert cells
+            return ((h >> 3) % 4 == 0) ? S_TEMPLE : S_RUINS;   // ~1 in 4 desert cells
         default:                      return S_NONE;
     }
 }
@@ -168,6 +182,15 @@ template<class F> void buildHouse(int ox, int oy, int oz, unsigned seed, F&& put
     for (int dx = -1; dx <= W; dx++)
     for (int dz = -1; dz <= D; dz++)
         put(ox+dx, oy+H, oz+dz, roof);                            // roof
+    // Pitched silhouette: a second, inset roof level (variant 2 stays flat —
+    // three distinct house shapes per village).
+    if (variant != 2)
+        for (int dx = 1; dx < W-1; dx++)
+        for (int dz = 1; dz < D-1; dz++)
+            put(ox+dx, oy+H+1, oz+dz, roof);
+    if (variant == 1)                                             // ridge cap
+        for (int dx = 2; dx < W-2; dx++)
+            put(ox+dx, oy+H+2, oz+D/2, BLOCK_WOOD);
     put(ox+W-2, oy+1, oz+D-2, BLOCK_CHEST);
     put(ox+1,   oy+3, oz+1,   BLOCK_TORCH);                       // interior light
 }
@@ -257,7 +280,7 @@ template<class F> void buildVillage(int ox, int oz, unsigned seed, F&& put) {
     };
     const int ccx = ox + 17, ccz = oz + 17;    // plaza / well centre
 
-    // Gravel path between two points, following the terrain surface + lamp posts.
+    // Gravel path between two points, following the terrain surface.
     auto path = [&](int x0, int z0, int x1, int z1) {
         int steps = (abs(x1-x0) > abs(z1-z0)) ? abs(x1-x0) : abs(z1-z0);
         if (steps < 1) return;
@@ -268,7 +291,7 @@ template<class F> void buildVillage(int ox, int oz, unsigned seed, F&& put) {
             if (py <= WATER_LEVEL) continue;
             put(px,   py, pz,   BLOCK_GRAVEL);
             put(px,   py, pz+1, BLOCK_GRAVEL);          // 2 wide
-            if (s % 7 == 3) put(px, py+1, pz-1, BLOCK_TORCH);  // lamp post
+
         }
     };
 
@@ -413,6 +436,80 @@ template<class F> void buildFortress(int ox, int oy, int oz, unsigned seed, F&& 
     put(ox+B/2, oy+1, oz+B/2-2, BLOCK_TORCH);
 }
 
+// ── MonolithGenerator (giant standing stones) ────────────────────────────────
+// Two or three rough rock spires, each anchored to its own ground height so
+// the group can stand on a slope like a natural formation.
+template<class F> void buildMonolith(int ox, int oy, int oz, unsigned seed, F&& put) {
+    const int n = 2 + (int)(hash2(ox, oz, seed + 301u) % 2);
+    for (int i = 0; i < n; i++) {
+        uint32_t h = hash2(ox + i * 17, oz + i * 31, seed + 313u);
+        const int bx = ox + (int)(h % 5);
+        const int bz = oz + (int)((h >> 4) % 5);
+        const int tall = 5 + (int)((h >> 8) % 5);
+        const int by = WorldGen::terrainHeight((float)bx, (float)bz, seed);
+        if (by <= WATER_LEVEL) continue;
+        for (int dy = 1; dy <= tall; dy++) {
+            const uint8_t rock = ((h >> dy) & 3) ? BLOCK_STONE : BLOCK_COBBLESTONE;
+            put(bx, by + dy, bz, rock);
+            if (dy <= tall - 3) {                       // thicker weathered base
+                put(bx + 1, by + dy, bz, rock);
+                put(bx, by + dy, bz + 1, rock);
+            }
+        }
+    }
+}
+
+// ── ArchGenerator (natural stone bridge) ─────────────────────────────────────
+template<class F> void buildArch(int ox, int oy, int oz, unsigned seed, F&& put) {
+    const int L = 9, H = 5;
+    for (int dz = 0; dz < 2; dz++) {
+        for (int dy = 1; dy <= H; dy++) {               // two thick legs
+            put(ox,     oy + dy, oz + dz, BLOCK_STONE);
+            put(ox + 1, oy + dy, oz + dz, BLOCK_STONE);
+            put(ox + L - 1, oy + dy, oz + dz, BLOCK_STONE);
+            put(ox + L,     oy + dy, oz + dz, BLOCK_STONE);
+        }
+        for (int d = 0; d <= L; d++) {                  // curved span
+            const float t = (2.0f * d / L) - 1.0f;
+            const int lift = (int)(2.2f * (1.0f - t * t) + 0.5f);
+            put(ox + d, oy + H + lift, oz + dz, BLOCK_STONE);
+            if (lift > 0)
+                put(ox + d, oy + H + lift - 1, oz + dz, BLOCK_STONE);
+        }
+    }
+}
+
+// ── GreatTreeGenerator (landmark tree, rare golden variant) ──────────────────
+template<class F> void buildGreatTree(int ox, int oy, int oz, unsigned seed, F&& put) {
+    const int cx = ox + 6, cz = oz + 6, TH = 11;
+    const uint32_t th = hash2(ox, oz, seed + 401u);
+    const uint8_t leaf = (th % 10) < 3 ? BLOCK_LEAVES_AUTUMN : BLOCK_LEAVES;
+
+    for (int dy = 1; dy <= TH; dy++)                    // 2×2 trunk
+    for (int dx = 0; dx < 2; dx++)
+    for (int dz = 0; dz < 2; dz++)
+        put(cx + dx, oy + dy, cz + dz, BLOCK_WOOD);
+
+    for (int b = 0; b < 4; b++) {                       // four thick branches
+        const int sx = (b & 1) ? 1 : -1, sz = (b & 2) ? 1 : -1;
+        for (int e = 1; e <= 3; e++)
+            put(cx + (sx > 0 ? 1 : 0) + sx * e,
+                oy + TH - 3 + e / 2,
+                cz + (sz > 0 ? 1 : 0) + sz * e, BLOCK_WOOD);
+    }
+
+    for (int dx = -5; dx <= 5; dx++)                    // huge ellipsoid canopy
+    for (int dy = -2; dy <= 3; dy++)
+    for (int dz = -5; dz <= 5; dz++) {
+        const float d = (float)(dx * dx + dz * dz) + (float)(dy * dy) * 3.2f;
+        if (d > 27.0f) continue;
+        if (d > 18.0f &&
+            hash2(cx + dx * 13 + dy, cz + dz * 11 - dy, seed + 431u) % 100 > 82)
+            continue;                                   // ragged edge
+        put(cx + dx, oy + TH + dy, cz + dz, leaf);
+    }
+}
+
 // ── PortalGenerator (obsidian frame) ─────────────────────────────────────────
 template<class F> void buildPortal(int ox, int oy, int oz, unsigned seed, F&& put) {
     const int W = 4, H = 5;                                    // frame in the X-Y plane
@@ -441,6 +538,9 @@ void build(Type t, int ox, int oy, int oz, unsigned seed, F&& put) {
         case S_CASTLE:   buildCastle  (ox, oy, oz, seed, put); break;
         case S_FORTRESS: buildFortress(ox, oy, oz, seed, put); break;
         case S_PORTAL:   buildPortal  (ox, oy, oz, seed, put); break;
+        case S_MONOLITH: buildMonolith(ox, oy, oz, seed, put); break;
+        case S_ARCH:     buildArch    (ox, oy, oz, seed, put); break;
+        case S_GREATTREE:buildGreatTree(ox, oy, oz, seed, put); break;
         default: break;                                   // reserved types: no-op
     }
 }
@@ -471,6 +571,16 @@ inline int generate(uint8_t blocks[CHUNK_W][CHUNK_H][CHUNK_D],
 
         const Def& d = def(t);
         int fp = d.footprint;
+
+        // Skip early when the structure cannot touch this chunk: builders and
+        // their terrain probes are expensive (village paths sample the height
+        // field per block), and most candidate cells lie entirely outside.
+        // The mine's tunnel runs past its nominal footprint; roofs/canopies
+        // overhang up to 2 blocks.
+        const int extent = (t == S_MINE ? 24 : fp) + 2;
+        if (ox + extent < cwx0 || ox - 2 >= cwx0 + CHUNK_W ||
+            oz + extent < cwz0 || oz - 2 >= cwz0 + CHUNK_D) continue;
+
         int oy;
 
         if (isUnderground(t)) {

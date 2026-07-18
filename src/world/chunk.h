@@ -26,6 +26,7 @@ class Chunk {
 public:
     int  cx, cz;        // chunk-space coordinates (world / 16)
     bool dirty = true;  // mesh needs rebuild
+    int  lodLevel = 0;  // 0 = full detail, 1 = far (no cross-plants, flat AO)
 
     uint8_t dominantBiome = 0;  // most common biome in this chunk
     long    blockCount    = 0;  // non-air blocks generated

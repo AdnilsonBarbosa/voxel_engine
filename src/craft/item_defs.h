@@ -39,7 +39,17 @@ enum class ItemID : uint16_t {
     WoodShovel   = 26, StoneShovel  = 27, IronShovel  = 28,
     WoodHoe      = 29, StoneHoe     = 30, IronHoe     = 31,
     WoodSword    = 32, StoneSword   = 33, IronSword   = 34,
-    COUNT        = 35
+    // ── Construction update: build-mode materials ─────────────────────────────
+    Stone        = 35, Glass        = 36, StoneBricks  = 37,
+    Bricks       = 38, Marble       = 39, Basalt       = 40,
+    Obsidian     = 41, SnowBlock    = 42, Ice          = 43,
+    Clay         = 44, Leaves       = 45, BirchWood    = 46,
+    WoodStairs   = 47, StoneStairs  = 48, Door         = 49,
+    Window       = 50, IronBars     = 51, Lamp         = 52,
+    Switch       = 53, Bed          = 54, Sink         = 55,
+    PottedPlant  = 56, RedFlower    = 57, YellowFlower = 58,
+    TallGrass    = 59, Bush         = 60,
+    COUNT        = 61
 };
 
 static constexpr int ITEM_COUNT = (int)ItemID::COUNT;
@@ -100,6 +110,34 @@ static constexpr ItemInfo ITEM_INFO[ITEM_COUNT] = {
 /* 32 */ {"Wood Sword",   ItemKind::Tool,    1,   59,  BLOCK_AIR},
 /* 33 */ {"Stone Sword",  ItemKind::Tool,    1,   131, BLOCK_AIR},
 /* 34 */ {"Iron Sword",   ItemKind::Tool,    1,   250, BLOCK_AIR},
+/* 35 */ {"Stone",        ItemKind::Block,   64,  0,   BLOCK_STONE},
+/* 36 */ {"Glass",        ItemKind::Block,   64,  0,   BLOCK_GLASS},
+/* 37 */ {"Stone Bricks", ItemKind::Block,   64,  0,   BLOCK_STONE_BRICKS},
+/* 38 */ {"Bricks",       ItemKind::Block,   64,  0,   BLOCK_BRICKS},
+/* 39 */ {"Marble",       ItemKind::Block,   64,  0,   BLOCK_MARBLE},
+/* 40 */ {"Basalt",       ItemKind::Block,   64,  0,   BLOCK_BASALT},
+/* 41 */ {"Obsidian",     ItemKind::Block,   64,  0,   BLOCK_OBSIDIAN},
+/* 42 */ {"Snow",         ItemKind::Block,   64,  0,   BLOCK_SNOW},
+/* 43 */ {"Ice",          ItemKind::Block,   64,  0,   BLOCK_ICE},
+/* 44 */ {"Clay",         ItemKind::Block,   64,  0,   BLOCK_CLAY},
+/* 45 */ {"Leaves",       ItemKind::Block,   64,  0,   BLOCK_LEAVES},
+/* 46 */ {"Birch Wood",   ItemKind::Block,   64,  0,   BLOCK_WOOD_BIRCH},
+// Oriented/multi-cell blocks: placeAs is the base variant; doPlaceBlock picks
+// the final orientation from the player's yaw (and the door's upper half).
+/* 47 */ {"Wood Stairs",  ItemKind::Block,   64,  0,   BLOCK_STAIR_WOOD_PX},
+/* 48 */ {"Stone Stairs", ItemKind::Block,   64,  0,   BLOCK_STAIR_STONE_PX},
+/* 49 */ {"Wooden Door",  ItemKind::Block,   64,  0,   BLOCK_DOOR_NS},
+/* 50 */ {"Window",       ItemKind::Block,   64,  0,   BLOCK_WINDOW},
+/* 51 */ {"Iron Bars",    ItemKind::Block,   64,  0,   BLOCK_IRON_BARS},
+/* 52 */ {"Lamp",         ItemKind::Block,   64,  0,   BLOCK_LAMP_ON},
+/* 53 */ {"Light Switch", ItemKind::Block,   64,  0,   BLOCK_SWITCH_ON},
+/* 54 */ {"Bed",          ItemKind::Block,   64,  0,   BLOCK_BED},
+/* 55 */ {"Sink",         ItemKind::Block,   64,  0,   BLOCK_SINK},
+/* 56 */ {"Potted Plant", ItemKind::Block,   64,  0,   BLOCK_PLANT_POT},
+/* 57 */ {"Red Flower",   ItemKind::Block,   64,  0,   BLOCK_FLOWER_RED},
+/* 58 */ {"Yellow Flower",ItemKind::Block,   64,  0,   BLOCK_FLOWER_YELLOW},
+/* 59 */ {"Tall Grass",   ItemKind::Block,   64,  0,   BLOCK_TALL_GRASS},
+/* 60 */ {"Bush",         ItemKind::Block,   64,  0,   BLOCK_BUSH},
 };
 // clang-format on
 
@@ -134,9 +172,11 @@ inline const ToolStats& toolStats(ItemID id) {
 inline ItemID blockDrop(uint8_t block) {
     switch (block) {
         case BLOCK_WOOD:        return ItemID::Wood;
+        case BLOCK_WOOD_BIRCH:  return ItemID::BirchWood;
         case BLOCK_STONE:       return ItemID::Cobblestone; // stone drops cobblestone
         case BLOCK_COBBLESTONE: return ItemID::Cobblestone;
         case BLOCK_DEEPSLATE:   return ItemID::Cobblestone;
+        case BLOCK_BASALT:      return ItemID::Cobblestone;
         case BLOCK_DIRT:        return ItemID::Dirt;
         case BLOCK_GRASS:       return ItemID::Dirt;        // grass → dirt
         case BLOCK_SAND:        return ItemID::Sand;
@@ -149,6 +189,37 @@ inline ItemID blockDrop(uint8_t block) {
         case BLOCK_EMERALD:     return ItemID::Emerald;
         case BLOCK_PLANKS:      return ItemID::Plank;
         case BLOCK_TORCH:       return ItemID::Torch;
+        case BLOCK_GLASS:         return ItemID::Glass;
+        case BLOCK_STONE_BRICKS:  return ItemID::StoneBricks;
+        case BLOCK_BRICKS:        return ItemID::Bricks;
+        case BLOCK_MARBLE:        return ItemID::Marble;
+        case BLOCK_OBSIDIAN:      return ItemID::Obsidian;
+        case BLOCK_SNOW:          return ItemID::SnowBlock;
+        case BLOCK_ICE:           return ItemID::Ice;
+        case BLOCK_CLAY:          return ItemID::Clay;
+        case BLOCK_LEAVES:        return ItemID::Leaves;
+        case BLOCK_LAMP_ON:
+        case BLOCK_LAMP_OFF:      return ItemID::Lamp;
+        case BLOCK_SWITCH_ON:
+        case BLOCK_SWITCH_OFF:    return ItemID::Switch;
+        case BLOCK_WINDOW:        return ItemID::Window;
+        case BLOCK_IRON_BARS:     return ItemID::IronBars;
+        case BLOCK_DOOR_NS: case BLOCK_DOOR_WE:
+        case BLOCK_DOOR_NS_OPEN: case BLOCK_DOOR_WE_OPEN:
+                                  return ItemID::Door;
+        case BLOCK_BED:           return ItemID::Bed;
+        case BLOCK_SINK:          return ItemID::Sink;
+        case BLOCK_STAIR_WOOD_PX: case BLOCK_STAIR_WOOD_NX:
+        case BLOCK_STAIR_WOOD_PZ: case BLOCK_STAIR_WOOD_NZ:
+                                  return ItemID::WoodStairs;
+        case BLOCK_STAIR_STONE_PX: case BLOCK_STAIR_STONE_NX:
+        case BLOCK_STAIR_STONE_PZ: case BLOCK_STAIR_STONE_NZ:
+                                  return ItemID::StoneStairs;
+        case BLOCK_PLANT_POT:     return ItemID::PottedPlant;
+        case BLOCK_FLOWER_RED:    return ItemID::RedFlower;
+        case BLOCK_FLOWER_YELLOW: return ItemID::YellowFlower;
+        case BLOCK_TALL_GRASS:    return ItemID::TallGrass;
+        case BLOCK_BUSH:          return ItemID::Bush;
         default:                return ItemID::None;
     }
 }

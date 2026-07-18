@@ -7,7 +7,7 @@
 
 int main() {
     const unsigned seed = 12345u;
-    const int R = 200;                         // 400×400 cells (~19k×19k blocks)
+    const int R = 12;                          // ±576 blocks: the compact island
     long tally[Structures::S_COUNT] = {0};
     long total = 0;
 

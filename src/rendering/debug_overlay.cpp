@@ -126,12 +126,55 @@ in vec2 vUV;
 in vec4 vColor;
 out vec4 fragColor;
 uniform sampler2D uTex;
+uniform int uRGBA;   // 0 = alpha-only font texture, 1 = full-colour atlas icon
 void main() {
-    float a = texture(uTex, vUV).r;
-    fragColor = vec4(vColor.rgb, vColor.a * a);
+    if (uRGBA > 0) {
+        vec4 t = texture(uTex, vUV);
+        fragColor = vec4(t.rgb * vColor.rgb, t.a * vColor.a);
+    } else {
+        float a = texture(uTex, vUV).r;
+        fragColor = vec4(vColor.rgb, vColor.a * a);
+    }
 }
 )";
 
+#ifdef __ANDROID__
+// Android uses the GLES2 context created by SDL. Keep a separate shader pair
+// for the 2D overlay; the desktop GLSL pair above is not accepted by GLES2.
+static const char* OVERLAY_VS_GLES = R"(
+#version 100
+precision highp float;
+attribute vec2 aPos;
+attribute vec2 aUV;
+attribute vec4 aColor;
+varying vec2 vUV;
+varying vec4 vColor;
+uniform mat4 uProj;
+void main() {
+    vUV = aUV;
+    vColor = aColor;
+    gl_Position = uProj * vec4(aPos, 0.0, 1.0);
+}
+)";
+
+static const char* OVERLAY_FS_GLES = R"(
+#version 100
+precision mediump float;
+varying vec2 vUV;
+varying vec4 vColor;
+uniform sampler2D uTex;
+uniform int uRGBA;
+void main() {
+    if (uRGBA > 0) {
+        vec4 t = texture2D(uTex, vUV);
+        gl_FragColor = vec4(t.rgb * vColor.rgb, t.a * vColor.a);
+    } else {
+        float a = texture2D(uTex, vUV).r;
+        gl_FragColor = vec4(vColor.rgb, vColor.a * a);
+    }
+}
+)";
+#endif
 static GLuint compileShader(GLenum type, const char* src) {
     GLuint s = pglCreateShader(type);
     pglShaderSource(s, 1, &src, nullptr);
@@ -189,8 +232,13 @@ static GLuint buildFontTexture() {
 // ── DebugOverlay implementation ──────────────────────────────────────────────
 
 void DebugOverlay::init() {
+#ifdef __ANDROID__
+    GLuint vs = compileShader(GL_VERTEX_SHADER, OVERLAY_VS_GLES);
+    GLuint fs = compileShader(GL_FRAGMENT_SHADER, OVERLAY_FS_GLES);
+#else
     GLuint vs = compileShader(GL_VERTEX_SHADER, OVERLAY_VS);
     GLuint fs = compileShader(GL_FRAGMENT_SHADER, OVERLAY_FS);
+#endif
     if (!vs || !fs) return;
 
     program = pglCreateProgram();
@@ -213,6 +261,7 @@ void DebugOverlay::init() {
     GLint aColor = pglGetAttribLocation(program, "aColor");
     uProj = pglGetUniformLocation(program, "uProj");
     uTex  = pglGetUniformLocation(program, "uTex");
+    uRGBA = pglGetUniformLocation(program, "uRGBA");
 
     // VAO + VBO for batched quads: each vertex = pos(2) + uv(2) + color(4) = 8 floats
     pglGenVertexArrays(1, &vao);
@@ -243,14 +292,24 @@ void DebugOverlay::cleanup() {
 
 void DebugOverlay::beginFrame(int screenW, int screenH) {
     quadCount = 0;
+    segCount = 0;
     screenW_ = screenW;
     screenH_ = screenH;
 }
 
-void DebugOverlay::pushQuad(float x, float y, float w, float h,
-                            float u0, float v0, float u1, float v1,
-                            unsigned int color, float alpha) {
+void DebugOverlay::pushQuadSeg(GLuint tex, int rgba,
+                               float x, float y, float w, float h,
+                               float u0, float v0, float u1, float v1,
+                               unsigned int color, float alpha) {
     if (quadCount >= MAX_QUADS) return;
+
+    // Extend the current segment or open a new one on texture/mode change.
+    if (segCount == 0 || segs[segCount - 1].tex != tex ||
+        segs[segCount - 1].rgba != rgba) {
+        if (segCount >= MAX_SEGS) return;
+        segs[segCount++] = { tex, rgba, 0 };
+    }
+    segs[segCount - 1].quads++;
 
     float r = ((color >> 16) & 0xFF) / 255.0f;
     float g = ((color >>  8) & 0xFF) / 255.0f;
@@ -267,6 +326,37 @@ void DebugOverlay::pushQuad(float x, float y, float w, float h,
     d[40] = x;     d[41] = y + h; d[42] = u0; d[43] = v1; d[44] = r; d[45] = g; d[46] = b; d[47] = alpha;
 
     quadCount++;
+}
+
+void DebugOverlay::pushQuadVertices(GLuint tex, int rgba,
+                                    const float* xy, const float* uv,
+                                    unsigned int color, float alpha) {
+    if (quadCount >= MAX_QUADS) return;
+    if (segCount == 0 || segs[segCount - 1].tex != tex ||
+        segs[segCount - 1].rgba != rgba) {
+        if (segCount >= MAX_SEGS) return;
+        segs[segCount++] = { tex, rgba, 0 };
+    }
+    segs[segCount - 1].quads++;
+    const float r = ((color >> 16) & 0xFF) / 255.0f;
+    const float g = ((color >> 8) & 0xFF) / 255.0f;
+    const float b = (color & 0xFF) / 255.0f;
+    float* d = &quadData[quadCount * 6 * 8];
+    auto put = [&](int i, int p) {
+        d[i * 8 + 0] = xy[p * 2 + 0];
+        d[i * 8 + 1] = xy[p * 2 + 1];
+        d[i * 8 + 2] = uv[p * 2 + 0];
+        d[i * 8 + 3] = uv[p * 2 + 1];
+        d[i * 8 + 4] = r; d[i * 8 + 5] = g; d[i * 8 + 6] = b; d[i * 8 + 7] = alpha;
+    };
+    put(0, 0); put(1, 1); put(2, 2);
+    put(3, 0); put(4, 2); put(5, 3);
+    ++quadCount;
+}
+void DebugOverlay::pushQuad(float x, float y, float w, float h,
+                            float u0, float v0, float u1, float v1,
+                            unsigned int color, float alpha) {
+    pushQuadSeg(fontTex, 0, x, y, w, h, u0, v0, u1, v1, color, alpha);
 }
 
 void DebugOverlay::drawText(const char* text, int x, int y, unsigned int color, float scale) {
@@ -296,18 +386,33 @@ void DebugOverlay::drawText(const char* text, int x, int y, unsigned int color, 
 }
 
 void DebugOverlay::drawRect(int x, int y, int w, int h, unsigned int color, float alpha) {
-    // Use a solid-white texel from the font texture (position 0,0 has space glyph = empty)
-    // Actually, we just use alpha and the font tex is sampled but for rects we want full coverage.
-    // Trick: use u=v=0 which is black in the font → we bypass the texture by using a separate path.
-    // Simpler: just set the UV to a known solid pixel. The '@' glyph center is always solid.
-    // '@' is index 32, col=0, row=4 → pixel at (4, 36) is solid.
-    float u0 = 4.0f / 128.0f;
-    float v0 = 36.0f / 48.0f;
-    float u1 = 5.0f / 128.0f;
-    float v1 = 37.0f / 48.0f;
-    pushQuad((float)x, (float)y, (float)w, (float)h, u0, v0, u1, v1, color, alpha);
+    // Solid fill = sample the CENTRE of a guaranteed-solid font texel, so
+    // every fragment reads alpha 1. '_' (ASCII 95, col 15 row 3) has a full
+    // 0xFF bottom row: texel (120..127, 31). Sampling texel centres avoids
+    // the driver-dependent rounding that made rects vanish when a UV landed
+    // exactly on a texel boundary.
+    const float u = 120.5f / 128.0f;
+    const float v = 31.5f / 48.0f;
+    pushQuad((float)x, (float)y, (float)w, (float)h, u, v, u, v, color, alpha);
 }
 
+void DebugOverlay::drawIcon(int x, int y, int w, int h,
+                            float u0, float v0, float u1, float v1,
+                            unsigned int tint, float alpha) {
+    if (!iconTex_) return;
+    pushQuadSeg(iconTex_, 1, (float)x, (float)y, (float)w, (float)h,
+                u0, v0, u1, v1, tint, alpha);
+}
+
+void DebugOverlay::drawIconQuad(float x0, float y0, float x1, float y1,
+                                float x2, float y2, float x3, float y3,
+                                float u0, float v0, float u1, float v1,
+                                unsigned int tint, float alpha) {
+    if (!iconTex_) return;
+    const float xy[8] = { x0, y0, x1, y1, x2, y2, x3, y3 };
+    const float uv[8] = { u0, v0, u1, v0, u1, v1, u0, v1 };
+    pushQuadVertices(iconTex_, 1, xy, uv, tint, alpha);
+}
 void DebugOverlay::flushBatch() {
     if (quadCount == 0 || !program) return;
 
@@ -324,16 +429,25 @@ void DebugOverlay::flushBatch() {
 
     pglUniformMatrix4fv(uProj, 1, GL_FALSE, proj);
     pglActiveTexture(GL_TEXTURE0);
-    pglBindTexture(GL_TEXTURE_2D, fontTex);
     pglUniform1i(uTex, 0);
 
     pglBindVertexArray(vao);
     pglBindBuffer(GL_ARRAY_BUFFER, vbo);
     pglBufferSubData(GL_ARRAY_BUFFER, 0, quadCount * 6 * 8 * sizeof(float), quadData);
-    pglDrawArrays(GL_TRIANGLES, 0, quadCount * 6);
+
+    // Replay segments in draw order, re-binding only on texture change:
+    // a hotbar of 9 icons + text still costs just a handful of draw calls.
+    int first = 0;
+    for (int s = 0; s < segCount; s++) {
+        pglUniform1i(uRGBA, segs[s].rgba);
+        pglBindTexture(GL_TEXTURE_2D, segs[s].tex);
+        pglDrawArrays(GL_TRIANGLES, first, segs[s].quads * 6);
+        first += segs[s].quads * 6;
+    }
     pglBindVertexArray(0);
 }
 
 void DebugOverlay::flush() {
     flushBatch();
 }
+

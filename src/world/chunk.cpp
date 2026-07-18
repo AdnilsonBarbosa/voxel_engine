@@ -1,4 +1,4 @@
-#include "chunk.h"
+﻿#include "chunk.h"
 #include "block_types.h"
 #include "block_material.h"
 #include "lighting.h"
@@ -19,7 +19,8 @@ static const FaceDef FACES[6] = {
 };
 
 // Ambient-occlusion brightness for occlusion levels 0..3 (0 = most occluded)
-static const float AO_LUT[4] = { 0.45f, 0.65f, 0.82f, 1.00f };
+// Art pass: deeper corners ground the blocks and give edges definition.
+static const float AO_LUT[4] = { 0.36f, 0.58f, 0.78f, 1.00f };
 
 // Deterministic hash for seed-driven texture variation.
 static inline uint32_t chash(int x, int y, int z) {
@@ -30,8 +31,8 @@ static inline uint32_t chash(int x, int y, int z) {
 
 // Top-left UV of an atlas tile slot.
 static inline void tileUV(uint16_t tile, float& tox, float& toy) {
-    tox = (float)((tile % Atlas::ATLAS_COLS) * Atlas::TILE_PX) / (float)Atlas::ATLAS_PX;
-    toy = (float)((tile / Atlas::ATLAS_COLS) * Atlas::TILE_PX) / (float)Atlas::ATLAS_PX;
+    tox = (float)((tile % Atlas::ATLAS_COLS) * Atlas::TILE_STRIDE) / (float)Atlas::ATLAS_PX;
+    toy = (float)((tile / Atlas::ATLAS_COLS) * Atlas::TILE_STRIDE) / (float)Atlas::ATLAS_PX;
 }
 
 Chunk::Chunk(int cx, int cz) : cx(cx), cz(cz), dirty(true) {
@@ -142,6 +143,43 @@ void Chunk::buildMesh(const MeshAttribs& attr, const ChunkNeighbors& nb) {
         }
     };
 
+    // ── Shaped blocks (slab/stair/pane/door): cuboid emitter ─────────────────
+    // Emits one axis-aligned box given in cell fractions. Faces flush with the
+    // cell border are culled against opaque neighbours. UVs crop the tile to
+    // the box extents, image top at box top (unlike greedy faces these tiles
+    // are asymmetric — door handle, bed side bands).
+    auto emitBox = [&](int x, int y, int z, const float lo[3], const float hi[3],
+                       uint8_t bt, float skyB, float blkB, uint16_t tileOverride) {
+        for (int fi = 0; fi < 6; fi++) {
+            const FaceDef& fd = FACES[fi];
+            const int  nAxis = fd.n[0] ? 0 : (fd.n[1] ? 1 : 2);
+            const bool posN  = fd.n[nAxis] > 0;
+            const float flush = posN ? hi[nAxis] : lo[nAxis];
+            if (((posN && flush > 0.999f) || (!posN && flush < 0.001f)) &&
+                blockIsOpaque(blockAt(x+fd.n[0], y+fd.n[1], z+fd.n[2])))
+                continue;
+            const int faceIdx = (fd.n[1] == 1) ? 0 : (fd.n[1] == -1) ? 1 : 2;
+            const uint16_t tile = tileOverride != 0xFFFF ? tileOverride
+                                : Materials::tileForFace(bt, faceIdx, 0);
+            float tox, toy; tileUV(tile, tox, toy);
+            const int ua = fd.n[0] ? 2 : 0;             // horizontal tangent
+            const int va = fd.n[1] ? 2 : 1;             // vertical / other tangent
+            const float shade = FACE_SHADE[fi];
+            unsigned int base = (unsigned int)(verts.size() / 11);
+            for (int vi = 0; vi < 4; vi++) {
+                float p[3];
+                for (int a = 0; a < 3; a++)
+                    p[a] = lo[a] + (hi[a] - lo[a]) * fd.v[vi][a];
+                const float uu = p[ua];
+                const float vv = (va == 1) ? 1.0f - p[1] : p[va];
+                pushV(wx0 + x + p[0], (float)y + p[1], wz0 + z + p[2],
+                      uu, vv, tox, toy, shade, skyB, blkB, 0.0f);
+            }
+            indices.push_back(base+0); indices.push_back(base+1); indices.push_back(base+2);
+            indices.push_back(base+0); indices.push_back(base+2); indices.push_back(base+3);
+        }
+    };
+
     // ── Water + cross-plants: per-block emit (not greedy-meshed) ─────────────
     for (int x = 0; x < CHUNK_W; x++)
     for (int y = 0; y < CHUNK_H; y++)
@@ -150,6 +188,7 @@ void Chunk::buildMesh(const MeshAttribs& attr, const ChunkNeighbors& nb) {
         if (bt == BLOCK_AIR) continue;
         RenderKind kind = blockRenderKind(bt);
         if (kind == RK_SOLID) continue;              // handled by greedy pass
+        if (kind == RK_CROSS && lodLevel >= 1) continue; // LOD: no far plants
 
         float skyB = skyOf(x, y, z);
         float blkB = blockOf(x, y, z);
@@ -177,23 +216,87 @@ void Chunk::buildMesh(const MeshAttribs& attr, const ChunkNeighbors& nb) {
             continue;
         }
 
-        // RK_LIQUID (water): animated top ring, no AO, show only against air/plants
+        // Shaped construction blocks (kept at every LOD — player-built).
+        if (kind == RK_SLAB) {
+            const float lo[3] = {0,0,0}, hi[3] = {1,0.5f,1};
+            emitBox(x, y, z, lo, hi, bt, skyB, blkB, 0xFFFF);
+            continue;
+        }
+        if (kind == RK_STAIR) {
+            const float lo0[3] = {0,0,0}, hi0[3] = {1,0.5f,1};
+            emitBox(x, y, z, lo0, hi0, bt, skyB, blkB, 0xFFFF);
+            float lo1[3] = {0,0.5f,0}, hi1[3] = {1,1,1};
+            switch (bt) {                       // upper half sits on the high side
+                case BLOCK_STAIR_WOOD_PX: case BLOCK_STAIR_STONE_PX: lo1[0] = 0.5f; break;
+                case BLOCK_STAIR_WOOD_NX: case BLOCK_STAIR_STONE_NX: hi1[0] = 0.5f; break;
+                case BLOCK_STAIR_WOOD_PZ: case BLOCK_STAIR_STONE_PZ: lo1[2] = 0.5f; break;
+                default:                                             hi1[2] = 0.5f; break;
+            }
+            emitBox(x, y, z, lo1, hi1, bt, skyB, blkB, 0xFFFF);
+            continue;
+        }
+        if (kind == RK_PANE) {
+            // Orientation from neighbours: span towards solid blocks, same
+            // panes or doors; unconnected panes show a cross (both spans).
+            auto joins = [&](int dx, int dz) {
+                uint8_t nbt = blockAt(x+dx, y, z+dz);
+                return blockIsOpaque(nbt) || nbt == bt ||
+                       blockRenderKind(nbt) == RK_PANE ||
+                       blockRenderKind(nbt) == RK_DOOR;
+            };
+            const bool jx = joins(1,0) || joins(-1,0);
+            const bool jz = joins(0,1) || joins(0,-1);
+            const float t0 = 0.4375f, t1 = 0.5625f;
+            if (jx || !jz) {
+                const float lo[3] = {0,0,t0}, hi[3] = {1,1,t1};
+                emitBox(x, y, z, lo, hi, bt, skyB, blkB, 0xFFFF);
+            }
+            if (jz) {
+                const float lo[3] = {t0,0,0}, hi[3] = {t1,1,1};
+                emitBox(x, y, z, lo, hi, bt, skyB, blkB, 0xFFFF);
+            }
+            continue;
+        }
+        if (kind == RK_DOOR) {
+            // Two stacked door blocks share one id; the half above another
+            // door renders the window tile. Open doors swing 90° (span swap).
+            const bool topHalf = blockAt(x, y-1, z) == bt;
+            const uint16_t tile = topHalf ? Atlas::T_DOOR_TOP : Atlas::T_DOOR_BOT;
+            const float th = 0.1875f;
+            const bool spansX = (bt == BLOCK_DOOR_NS || bt == BLOCK_DOOR_WE_OPEN);
+            if (spansX) { const float lo[3] = {0,0,0}, hi[3] = {1,1,th};
+                          emitBox(x, y, z, lo, hi, bt, skyB, blkB, tile); }
+            else        { const float lo[3] = {0,0,0}, hi[3] = {th,1,1};
+                          emitBox(x, y, z, lo, hi, bt, skyB, blkB, tile); }
+            continue;
+        }
+
+        // RK_LIQUID (water/lava): animated top ring, no AO, drawn against
+        // air/plants and the other fluid (so lava-water interfaces render).
         uint16_t wtile = Materials::tileForFace(bt, 0, 0);
-        float wtox, wtoy; tileUV(wtile, wtox, wtoy);
         for (int fi = 0; fi < 6; fi++) {
             const FaceDef& fd = FACES[fi];
             uint8_t neigh = blockAt(x+fd.n[0], y+fd.n[1], z+fd.n[2]);
-            if (neigh == BLOCK_WATER || blockIsOpaque(neigh)) continue;
+            if (neigh == bt || blockIsOpaque(neigh)) continue;
+            // Shoreline foam: water tops touching land pick the foam tile.
+            uint16_t tile = wtile;
+            if (bt == BLOCK_WATER && fd.n[1] == 1 &&
+                (blockIsOpaque(blockAt(x+1, y, z)) || blockIsOpaque(blockAt(x-1, y, z)) ||
+                 blockIsOpaque(blockAt(x, y, z+1)) || blockIsOpaque(blockAt(x, y, z-1))))
+                tile = Atlas::T_WATER_FOAM;
+            float wtox, wtoy; tileUV(tile, wtox, wtoy);
             int ua = fd.n[0] ? 1 : 0;            // a tangent axis for uv
             int va = fd.n[2] ? 1 : 2;            // the other tangent axis
             float shade = FACE_SHADE[fi];
+            // Lava keeps its own glow: wave sway but full brightness at night.
+            float blkFace = (bt == BLOCK_LAVA) ? 1.0f : blkB;
             unsigned int base = (unsigned int)(verts.size() / 11);
             for (int vi = 0; vi < 4; vi++) {
                 float oy = fd.v[vi][1];
                 float py = (oy > 0.5f) ? (float)y + 0.88f : (float)y;
                 float wv = (oy > 0.5f) ? 1.0f : 0.0f;
                 pushV(wx0 + x + fd.v[vi][0], py, wz0 + z + fd.v[vi][2],
-                      fd.v[vi][ua], fd.v[vi][va], wtox, wtoy, shade, skyB, blkB, wv);
+                      fd.v[vi][ua], fd.v[vi][va], wtox, wtoy, shade, skyB, blkFace, wv);
             }
             indices.push_back(base+0); indices.push_back(base+1); indices.push_back(base+2);
             indices.push_back(base+0); indices.push_back(base+2); indices.push_back(base+3);
@@ -259,7 +362,11 @@ void Chunk::buildMesh(const MeshAttribs& attr, const ChunkNeighbors& nb) {
                 if (blockRenderKind(bt) != RK_SOLID) continue;
                 if (blockIsOpaque(blockAt(c[0]+fd.n[0], c[1]+fd.n[1], c[2]+fd.n[2])))
                     continue;                             // face culled
-                int ao[4]; faceAO(fi, c[0], c[1], c[2], ao);
+                // LOD far: flat AO — cheaper to sample AND merges into much
+                // larger greedy rectangles (far fewer vertices).
+                int ao[4];
+                if (lodLevel >= 1) ao[0] = ao[1] = ao[2] = ao[3] = 3;
+                else faceAO(fi, c[0], c[1], c[2], ao);
                 uint32_t variant = regionVariant(iwx0 + c[0], c[1], iwz0 + c[2]);
                 mValid[i][j]   = 1;
                 mTile[i][j]    = Materials::tileForFace(bt, fi, variant);

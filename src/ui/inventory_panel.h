@@ -1,6 +1,11 @@
 #pragma once
 #include "../craft/inventory.h"
 #include "../rendering/debug_overlay.h"
+#include "../rendering/texture_atlas.h"
+#include "block_icon.h"
+#include "hotbar.h"
+#include "ui_theme.h"
+#include <algorithm>
 #include <cstdio>
 #include <cstring>
 
@@ -13,28 +18,34 @@ public:
     void close() { open_ = false; anim_ = 1.0f; clearDrag_(); }
 
     bool mobileButtonHit(int x, int y, int screenW, int screenH) const {
-        int s = mobileButtonSize_(screenW, screenH);
-        int bx = screenW - s - 14;
-        int by = screenH - s - 92;
-        return x >= bx && x < bx + s && y >= by && y < by + s;
+        const int s = buttonSize_(screenW);
+        int bx, by; launcherPos_(screenW, screenH, s, bx, by);
+        return x >= bx - 8 && x < bx + s + 8 && y >= by - 8 && y < by + s + 8;
     }
 
     void update(float dt) {
-        float target = open_ ? 1.0f : 0.0f;
-        float k = 1.0f - expf(-dt * 14.0f);
-        anim_ += (target - anim_) * k;
+        const float target = open_ ? 1.0f : 0.0f;
+        anim_ += (target - anim_) * (1.0f - expf(-dt * 16.0f));
         if (!open_ && anim_ < 0.01f) anim_ = 0.0f;
     }
 
     bool handleMouseDown(int x, int y, Craft::Inventory& inv, int screenW, int screenH) {
         if (!open_) return false;
-        int slot = slotAt_(x, y, screenW, screenH);
-        if (slot >= 0) {
-            Craft::ItemSlot& s = inv.slot(slot);
-            if (s.item != Craft::ItemID::None) {
-                drag_ = s;
-                dragFrom_ = slot;
-                s = Craft::ItemSlot{};
+        if (closeHit_(x, y, screenW, screenH)) { restoreDrag_(inv); close(); return true; }
+        const int cat = categoryAt_(x, y, screenW, screenH);
+        if (cat >= 0) { category_ = cat; hoverSlot_ = -1; restoreDrag_(inv); clearDrag_(); return true; }
+        const int s = slotAt_(x, y, screenW, screenH);
+        // Sticky move (mobile): an item picked with a tap travels to the next
+        // tapped slot — no drag precision needed.
+        if (sticky_ && hasDrag_()) {
+            if (s >= 0) dropInto_(inv, s); else restoreDrag_(inv);
+            clearDrag_();
+            return s >= 0 || insidePanel_(x, y, screenW, screenH);
+        }
+        if (s >= 0) {
+            Craft::ItemSlot& slotRef = inv.slot(s);
+            if (slotRef.item != Craft::ItemID::None) {
+                drag_ = slotRef; dragFrom_ = s; slotRef = Craft::ItemSlot{};
                 dragX_ = x; dragY_ = y;
             }
             return true;
@@ -51,10 +62,10 @@ public:
 
     bool handleMouseUp(int x, int y, Craft::Inventory& inv, int screenW, int screenH) {
         if (!open_) return false;
-        if (hasDrag_()) {
-            int dst = slotAt_(x, y, screenW, screenH);
-            if (dst >= 0) dropInto_(inv, dst);
-            else restoreDrag_(inv);
+        if (hasDrag_() && !sticky_) {
+            const int dst = slotAt_(x, y, screenW, screenH);
+            if (dst == dragFrom_) { sticky_ = true; return true; }  // tap → armed
+            if (dst >= 0) dropInto_(inv, dst); else restoreDrag_(inv);
             clearDrag_();
             return true;
         }
@@ -62,164 +73,210 @@ public:
     }
 
     void drawMobileButton(DebugOverlay& ov, int screenW, int screenH) const {
-        int s = mobileButtonSize_(screenW, screenH);
-        int bx = screenW - s - 14;
-        int by = screenH - s - 92;
-        ov.drawRect(bx, by, s, s, open_ ? 0x3a4f6f : 0x111827, 0.82f);
-        ov.drawRect(bx + 9, by + 11, s - 18, 5, 0xd8e4ff, 0.95f);
-        ov.drawRect(bx + 9, by + 23, s - 18, 5, 0xd8e4ff, 0.95f);
-        ov.drawRect(bx + 9, by + 35, s - 18, 5, 0xd8e4ff, 0.95f);
+        const int s = buttonSize_(screenW);
+        int bx, by; launcherPos_(screenW, screenH, s, bx, by);
+        iconButton(ov, bx, by, s, UIColorPalette::selected_color, 0, open_);
     }
 
-    void draw(DebugOverlay& ov, const Craft::Inventory& inv, int screenW, int screenH) {
+    // Launcher sits at the right end of the hotbar (like Bedrock's "..." slot)
+    // instead of floating over the action buttons.
+    static void launcherPos_(int W, int H, int s, int& bx, int& by) {
+        bx = (W + Hotbar::panelWidth(W)) / 2 + 10;
+        if (bx + s > W - 6) bx = W - s - 6;
+        by = Hotbar::panelY(H) + (Hotbar::barH() - s) / 2;
+    }
+
+    void draw(DebugOverlay& ov, const TextureAtlas& atlas,
+              const Craft::Inventory& inv, int screenW, int screenH) {
         if (anim_ <= 0.01f) return;
         int panW, panH, panX, panY;
         layout_(screenW, screenH, panW, panH, panX, panY);
-        int slide = (int)((1.0f - anim_) * 28.0f);
+        const int slide = (int)((1.0f - anim_) * 22.0f);
         panY += slide;
 
-        ov.drawRect(0, 0, screenW, screenH, 0x02040a, 0.30f * anim_);
-        ov.drawRect(panX, panY, panW, panH, 0x101522, 0.96f * anim_);
-        ov.drawRect(panX + 6, panY + 6, panW - 12, 34, 0x1f2937, 0.92f * anim_);
-        ov.drawText("INVENTORY", panX + 16, panY + 17, 0xf5f7ff, 1.25f);
-        ov.drawText("Search", panX + panW - 150, panY + 18, 0x8da2c0, 1.0f);
-        ov.drawRect(panX + panW - 156, panY + 13, 136, 19, 0x0b1020, 0.95f * anim_);
+        roundedFill(ov, 0, 0, screenW, screenH, UIColorPalette::shadow_color, 0.34f * anim_, 0);
+        panel(ov, panX, panY, panW, panH, 0.92f * anim_);
+        header(ov, panX, panY, panW, "INVENTORY", "TOUCH AN ITEM TO MOVE");
+        iconButton(ov, panX + panW - 46, panY + 8, 34, UIColorPalette::text_primary, 2, false);
 
-        const char* cats[] = {"All", "Blocks", "Ore", "Craft", "Tools"};
-        for (int i = 0; i < 5; ++i) {
-            int cx = panX + 16 + i * 70;
-            ov.drawRect(cx, panY + 48, 62, 18, i == category_ ? 0x31415f : 0x171d2b, 0.90f * anim_);
-            ov.drawText(cats[i], cx + 7, panY + 53, i == category_ ? 0xffffff : 0x9ca8bf);
+        const char* cats[] = {"ALL", "NATURAL", "WOOD", "STONE", "BUILD", "DECOR", "TOOLS", "FOOD"};
+        const int catY = panY + 50;
+        const int catW = std::max(56, (panW - 24) / 5);
+        for (int i = 0; i < 8; ++i) {
+            const int row = i / 5, col = i % 5;
+            const int cx = panX + 12 + col * catW;
+            const int cy = catY + row * 28;
+            button(ov, cx, cy, catW - 5, 23, cats[i], category_ == i);
         }
 
-        int startX = panX + (panW - (9 * SLOT + 8 * GAP)) / 2;
-        int startY = panY + 82;
-        for (int i = 0; i < Craft::Inventory::TOTAL_SLOTS; ++i) {
-            int col = i % 9, row = i / 9;
-            int sx = startX + col * (SLOT + GAP);
-            int sy = startY + row * (SLOT + GAP);
-            bool hot = i < Craft::Inventory::HOTBAR_SIZE;
-            bool hov = (i == hoverSlot_);
-            const Craft::ItemSlot& slot = inv.slot(i);
-            unsigned bg = hot ? 0x202a3c : 0x151b28;
-            if (hov) bg = 0x33425f;
-            ov.drawRect(sx, sy, SLOT, SLOT, bg, 0.94f * anim_);
-            ov.drawRect(sx, sy, SLOT, 2, hov ? 0xbfd7ff : 0x2a3446, 0.90f * anim_);
-            ov.drawRect(sx, sy + SLOT - 2, SLOT, 2, 0x070a10, 0.85f * anim_);
-            if (slot.item == Craft::ItemID::None) continue;
-            drawItem_(ov, slot, sx + 6, sy + 6, SLOT - 12, anim_);
+        const int gridTop = catY + 64;
+        const int columns = columns_(screenW);
+        const int size = gridSlotSize_(panW, columns);
+        const int gap = size < 46 ? 4 : 6;
+        const int gridW = columns * size + (columns - 1) * gap;
+        const int startX = panX + (panW - gridW) / 2;
+        const int rows = (Craft::Inventory::TOTAL_SLOTS - Craft::Inventory::HOTBAR_SIZE + columns - 1) / columns;
+        for (int i = Craft::Inventory::HOTBAR_SIZE; i < Craft::Inventory::TOTAL_SLOTS; ++i) {
+            const int n = i - Craft::Inventory::HOTBAR_SIZE;
+            drawSlot_(ov, atlas, inv.slot(i), i, startX + (n % columns) * (size + gap),
+                      gridTop + (n / columns) * (size + gap), size, inv);
         }
 
-        if (hoverSlot_ >= 0 && !hasDrag_()) drawTooltip_(ov, inv.slot(hoverSlot_), dragX_, dragY_, screenW, screenH);
-        if (hasDrag_()) drawItem_(ov, drag_, dragX_ - 19, dragY_ - 19, 38, anim_);
+        const int hotY = std::min(panY + panH - size - 28, gridTop + rows * (size + gap) + 14);
+        ov.drawText("HOTBAR", startX, hotY - 13, UIColorPalette::text_muted, UITypography::hint);
+        for (int i = 0; i < Craft::Inventory::HOTBAR_SIZE; ++i)
+            drawSlot_(ov, atlas, inv.slot(i), i, startX + (i % columns) * (size + gap),
+                      hotY, size, inv);
 
-        ov.drawText("E close", panX + 16, panY + panH - 22, 0x7f8da8);
-        ov.drawText("Drag to move  |  same item merges stacks", panX + 88, panY + panH - 22, 0x7f8da8);
+        if (hoverSlot_ >= 0 && !hasDrag_())
+            drawTooltip_(ov, inv.slot(hoverSlot_), dragX_, dragY_, screenW, screenH);
+        if (hasDrag_()) {
+            const int ix = dragX_ - size / 2;
+            const int iy = dragY_ - size / 2 - (sticky_ ? 26 : 0);
+            if (sticky_)
+                roundedFill(ov, ix - 5, iy - 5, size + 6, size + 6,
+                            UIColorPalette::selected_color, 0.45f, 8);
+            drawCachedItemIcon(ov, atlas, iconCache_, drag_.item, ix, iy, size - 4, 1.0f);
+        }
+
+        ov.drawText(sticky_ ? "Item picked  •  touch the destination slot"
+                            : "Touch an item, then touch where it goes",
+                    panX + 14, panY + panH - 15, UIColorPalette::text_muted, UITypography::hint);
     }
 
 private:
-    static constexpr int SLOT = 46;
-    static constexpr int GAP = 5;
+    static constexpr int CATEGORY_COUNT = 8;
     bool open_ = false;
     float anim_ = 0.0f;
     int category_ = 0;
     int hoverSlot_ = -1;
     int dragFrom_ = -1;
+    bool sticky_ = false;
     int dragX_ = 0, dragY_ = 0;
-    Craft::ItemSlot drag_;
+    Craft::ItemSlot drag_{};
+    ItemIconCache iconCache_;
 
     bool hasDrag_() const { return drag_.item != Craft::ItemID::None && drag_.count > 0; }
-    void clearDrag_() { drag_ = Craft::ItemSlot{}; dragFrom_ = -1; }
+    void clearDrag_() { drag_ = Craft::ItemSlot{}; dragFrom_ = -1; sticky_ = false; }
     void restoreDrag_(Craft::Inventory& inv) { if (dragFrom_ >= 0) inv.slot(dragFrom_) = drag_; }
 
     void dropInto_(Craft::Inventory& inv, int dst) {
-        Craft::ItemSlot& t = inv.slot(dst);
-        if (t.item == Craft::ItemID::None) { t = drag_; return; }
-        const Craft::ItemInfo& info = Craft::itemInfo(t.item);
-        if (t.item == drag_.item && info.maxStack > 1 && t.count < info.maxStack) {
-            int space = info.maxStack - t.count;
-            int take = drag_.count < space ? drag_.count : space;
-            t.count += (uint16_t)take;
-            drag_.count -= (uint16_t)take;
+        Craft::ItemSlot& target = inv.slot(dst);
+        if (target.item == Craft::ItemID::None) { target = drag_; return; }
+        const Craft::ItemInfo& info = Craft::itemInfo(target.item);
+        if (target.item == drag_.item && info.maxStack > 1 && target.count < info.maxStack) {
+            const int take = std::min((int)drag_.count, (int)info.maxStack - (int)target.count);
+            target.count += (uint16_t)take; drag_.count -= (uint16_t)take;
             if (drag_.count > 0) restoreDrag_(inv);
             return;
         }
-        if (dragFrom_ >= 0) inv.slot(dragFrom_) = t;
-        t = drag_;
+        if (dragFrom_ >= 0) inv.slot(dragFrom_) = target;
+        target = drag_;
     }
 
-    static int mobileButtonSize_(int screenW, int) { return screenW < 560 ? 52 : 46; }
-    static void layout_(int screenW, int screenH, int& panW, int& panH, int& panX, int& panY) {
-        panW = screenW < 620 ? screenW - 24 : 560;
-        panH = 316;
-        if (screenH < 410) panH = screenH - 24;
-        panX = (screenW - panW) / 2;
-        panY = (screenH - panH) / 2;
+    // Touch mode (runtime, any platform) gets finger-sized targets.
+    static int buttonSize_(int screenW) {
+        if (UITheme::touchUI()) return 96;
+        return screenW < 560 ? 48 : 42;
     }
-    static bool insidePanel_(int x, int y, int screenW, int screenH) {
-        int w,h,px,py; layout_(screenW, screenH, w,h,px,py);
+    static int columns_(int screenW) {
+        if (UITheme::touchUI()) return screenW < 900 ? 6 : 9;
+        return screenW < 500 ? 5 : (screenW < 900 ? 7 : 9);
+    }
+    static int gridSlotSize_(int panW, int cols) {
+        if (UITheme::touchUI())
+            return std::max(56, std::min(82, (panW - 42 - (cols - 1) * 8) / cols));
+        return std::max(34, std::min(52, (panW - 30 - (cols - 1) * 6) / cols));
+    }
+
+    static void layout_(int screenW, int screenH, int& w, int& h, int& x, int& y) {
+        const int edge = UITheme::edge(screenW);
+        w = (int)(screenW * 0.92f);
+        if (!UITheme::touchUI() && w > 760) w = 760;
+        if (w < 300) w = screenW - edge * 2;
+        h = (int)(screenH * 0.88f);
+        if (!UITheme::touchUI() && h > 570) h = 570;
+        if (h < 380) h = screenH - edge * 2;
+        x = (screenW - w) / 2;
+        y = (screenH - h) / 2;
+    }
+    static bool insidePanel_(int x, int y, int sw, int sh) {
+        int w,h,px,py; layout_(sw,sh,w,h,px,py);
         return x >= px && x < px + w && y >= py && y < py + h;
     }
-    static int slotAt_(int x, int y, int screenW, int screenH) {
-        int panW, panH, panX, panY; layout_(screenW, screenH, panW, panH, panX, panY);
-        int startX = panX + (panW - (9 * SLOT + 8 * GAP)) / 2;
-        int startY = panY + 82;
-        for (int i = 0; i < Craft::Inventory::TOTAL_SLOTS; ++i) {
-            int col = i % 9, row = i / 9;
-            int sx = startX + col * (SLOT + GAP);
-            int sy = startY + row * (SLOT + GAP);
-            if (x >= sx && x < sx + SLOT && y >= sy && y < sy + SLOT) return i;
+    static bool closeHit_(int x, int y, int sw, int sh) {
+        int w,h,px,py; layout_(sw,sh,w,h,px,py);
+        return x >= px + w - 58 && x < px + w - 4 && y >= py + 3 && y < py + 50;
+    }
+    static int categoryAt_(int x, int y, int sw, int sh) {
+        int w,h,px,py; layout_(sw,sh,w,h,px,py);
+        const int catW = std::max(56, (w - 24) / 5);
+        for (int i = 0; i < CATEGORY_COUNT; ++i) {
+            const int row = i / 5, col = i % 5;
+            const int cx = px + 12 + col * catW, cy = py + 50 + row * 28;
+            if (x >= cx && x < cx + catW - 5 && y >= cy && y < cy + 23) return i;
         }
         return -1;
     }
-    static unsigned itemColor_(Craft::ItemID id) {
-        const Craft::ItemInfo& info = Craft::itemInfo(id);
-        if (info.placeAs != BLOCK_AIR) {
-            const BlockColor& c = BLOCK_COLORS[(int)info.placeAs];
-            return ((unsigned)(c.r * 255.0f) << 16) | ((unsigned)(c.g * 255.0f) << 8) | (unsigned)(c.b * 255.0f);
+    static int slotAt_(int x, int y, int sw, int sh) {
+        int w,h,px,py; layout_(sw,sh,w,h,px,py);
+        const int cols = columns_(sw), size = gridSlotSize_(w, cols), gap = size < 46 ? 4 : 6;
+        const int gridW = cols * size + (cols - 1) * gap;
+        const int startX = px + (w - gridW) / 2, gridTop = py + 114;
+        const int rows = (27 + cols - 1) / cols;
+        for (int i = 9; i < 36; ++i) {
+            const int n = i - 9, sx = startX + (n % cols) * (size + gap), sy = gridTop + (n / cols) * (size + gap);
+            if (x >= sx && x < sx + size && y >= sy && y < sy + size) return i;
         }
-        switch (info.kind) {
-            case Craft::ItemKind::Ore: return 0xb7a657;
-            case Craft::ItemKind::Ingot: return 0xd98a4a;
-            case Craft::ItemKind::Craft: return 0x6fb36f;
-            case Craft::ItemKind::Tool: return 0x5aa7d8;
-            case Craft::ItemKind::Station: return 0x9a744e;
-            default: return 0x777f91;
+        const int hotY = std::min(py + h - size - 28, gridTop + rows * (size + gap) + 14);
+        for (int i = 0; i < 9; ++i) {
+            const int sx = startX + (i % cols) * (size + gap);
+            if (x >= sx && x < sx + size && y >= hotY && y < hotY + size) return i;
+        }
+        return -1;
+    }
+    bool matchesCategory_(const Craft::ItemSlot& s) const {
+        if (category_ == 0 || s.item == Craft::ItemID::None) return true;
+        const auto kind = Craft::itemInfo(s.item).kind;
+        switch (category_) {
+            case 1: return kind == Craft::ItemKind::Block || kind == Craft::ItemKind::Ore;
+            case 2: return kind == Craft::ItemKind::Craft || kind == Craft::ItemKind::Station;
+            case 3: return kind == Craft::ItemKind::Block && Craft::itemInfo(s.item).placeAs == BLOCK_STONE;
+            case 4: return kind == Craft::ItemKind::Block;
+            case 5: return kind == Craft::ItemKind::Craft || kind == Craft::ItemKind::Station;
+            case 6: return kind == Craft::ItemKind::Tool;
+            case 7: return kind == Craft::ItemKind::Craft;
+            default: return true;
         }
     }
-    static void drawItem_(DebugOverlay& ov, const Craft::ItemSlot& s, int x, int y, int size, float a) {
-        unsigned c = itemColor_(s.item);
-        ov.drawRect(x, y, size, size, c, 0.92f * a);
-        ov.drawRect(x, y, size, 5, 0xffffff, 0.16f * a);
-        ov.drawRect(x, y, 5, size, 0xffffff, 0.10f * a);
+    void drawSlot_(DebugOverlay& ov, const TextureAtlas& atlas, const Craft::ItemSlot& s,
+                   int index, int x, int y, int size, const Craft::Inventory& inv) {
+        const bool selected = index == inv.selectedSlot();
+        slot(ov, x, y, size, selected, !matchesCategory_(s));
+        if (s.item == Craft::ItemID::None) return;
+        drawCachedItemIcon(ov, atlas, iconCache_, s.item, x + 3, y + 3, size - 6,
+                           matchesCategory_(s) ? 1.0f : 0.30f);
         if (s.count > 1) {
             char buf[8]; snprintf(buf, sizeof(buf), "%d", s.count);
-            int tw = (int)strlen(buf) * 8;
-            ov.drawRect(x + size - tw - 4, y + size - 13, tw + 4, 12, 0x000000, 0.55f * a);
-            ov.drawText(buf, x + size - tw - 2, y + size - 12, 0xffffff);
+            const int tw = UITheme::textWidth(buf, UITypography::body_small);
+            roundedFill(ov, x + size - tw - 7, y + size - 17, tw + 5, 14,
+                        UIColorPalette::shadow_color, 0.78f, 4);
+            ov.drawText(buf, x + size - tw - 4, y + size - 15,
+                        UIColorPalette::text_primary, UITypography::body_small);
         }
     }
-    static void drawTooltip_(DebugOverlay& ov, const Craft::ItemSlot& s, int mx, int my, int screenW, int screenH) {
+    static void drawTooltip_(DebugOverlay& ov, const Craft::ItemSlot& s,
+                             int mx, int my, int sw, int sh) {
         if (s.item == Craft::ItemID::None) return;
-        const Craft::ItemInfo& info = Craft::itemInfo(s.item);
-        int len = (int)strlen(info.name);
-        int w = len * 8 + 18;
-        int x = mx + 16, y = my + 16;
-        if (x + w > screenW) x = mx - w - 12;
-        if (y + 34 > screenH) y = my - 38;
-        ov.drawRect(x, y, w, 32, 0x05070d, 0.92f);
-        ov.drawText(info.name, x + 8, y + 7, 0xffffff);
-        const char* kind = "Item";
-        switch (info.kind) {
-            case Craft::ItemKind::Block: kind = "Block"; break;
-            case Craft::ItemKind::Ore: kind = "Ore"; break;
-            case Craft::ItemKind::Ingot: kind = "Ingot"; break;
-            case Craft::ItemKind::Craft: kind = "Craft"; break;
-            case Craft::ItemKind::Tool: kind = "Tool"; break;
-            case Craft::ItemKind::Station: kind = "Station"; break;
-            default: break;
-        }
-        ov.drawText(kind, x + 8, y + 19, 0x9ca8bf);
+        const char* name = Craft::itemInfo(s.item).name;
+        int w = UITheme::textWidth(name, UITypography::body) + 22;
+        int x = mx + 14, y = my + 14;
+        if (x + w > sw) x = mx - w - 10;
+        if (y + 38 > sh) y = my - 44;
+        roundedFill(ov, x, y, w, 36, UIColorPalette::background_primary, 0.95f, 7);
+        ov.drawText(name, x + 10, y + 7, UIColorPalette::text_primary, UITypography::body);
+        ov.drawText(Craft::itemInfo(s.item).kind == Craft::ItemKind::Tool ? "TOOL" : "BLOCK",
+                    x + 10, y + 21, UIColorPalette::text_secondary, UITypography::hint);
     }
 };
 

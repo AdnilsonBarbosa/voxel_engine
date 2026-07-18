@@ -4,6 +4,7 @@
 // Open: C key.  Navigate: N/P keys.  Craft: E key.  Close: C or Escape.
 #include "craft_manager.h"
 #include "../rendering/debug_overlay.h"
+#include "../ui/ui_theme.h"
 #include <cstdio>
 #include <cstring>
 
@@ -52,7 +53,7 @@ public:
         int panW = 420, panH = 480;
         int panX = screenW - panW - 10;
         int panY = 10;
-        ov.drawRect(panX, panY, panW, panH, 0x0a0a18, 0.93f);
+        UI::panel(ov, panX, panY, panW, panH, 0.92f);
 
         int x = panX + 8, y = panY + 8;
         const int LINE = 14;
@@ -135,8 +136,7 @@ public:
             // Craft button
             bool can = craft.canCraftSelected() && !craft.isCrafting();
             craftBtnX_ = x; craftBtnY_ = y; craftBtnW_ = 120; craftBtnH_ = 18;
-            ov.drawRect(craftBtnX_, craftBtnY_, craftBtnW_, craftBtnH_,
-                        can ? 0x224422 : 0x222222, 0.9f);
+            UI::button(ov, craftBtnX_, craftBtnY_, craftBtnW_, craftBtnH_, can ? "CRAFT" : "NEED MATERIALS", can, UI::UIColorPalette::success_color);
             ov.drawText(craft.isCrafting() ? "CRAFTING..." : (can ? "[E] CRAFT" : "Need items"),
                         craftBtnX_ + 4, craftBtnY_ + 2,
                         can ? 0x44ff44 : 0x666666);
@@ -181,7 +181,7 @@ public:
             // Take output button
             if (craft.furnace().hasOutput()) {
                 furnBtnX_ = x; furnBtnY_ = y; furnBtnW_ = 140; furnBtnH_ = 16;
-                ov.drawRect(furnBtnX_, furnBtnY_, furnBtnW_, furnBtnH_, 0x224422, 0.9f);
+                UI::button(ov, furnBtnX_, furnBtnY_, furnBtnW_, furnBtnH_, "TAKE OUTPUT", true, UI::UIColorPalette::success_color);
                 ov.drawText("[T] Take Output", furnBtnX_ + 4, furnBtnY_ + 2, 0x44ff88);
                 y += 20;
             }

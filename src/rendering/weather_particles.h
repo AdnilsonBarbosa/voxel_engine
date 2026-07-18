@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 // WeatherParticles — GPU particle system for rain and snow.
 //
 // Features:
@@ -12,11 +12,13 @@
 #include "gl_ext.h"
 #include "../weather/weather_defs.h"
 #include "../weather/weather_config.h"
+#include <algorithm>
 
 class WeatherParticles {
 public:
     void init(int maxCount = 3000);
     void cleanup();
+    void setDensity(float density) { visualDensity_ = (std::max)(0.15f, (std::min)(1.0f, density)); }
 
     // Update particle positions. Call every frame.
     // dt         = frame delta (seconds)
@@ -76,6 +78,7 @@ private:
     float spawnAccum_   = 0.0f;
     float splashAccum_  = 0.0f;
     float updateTimer_  = 0.0f;   // for throttled updates on mobile
+    float visualDensity_ = 1.0f;
 
     // ── Internal helpers ─────────────────────────────────────────────────────
     void respawnRain_(RainParticle& p, float cx, float cy, float cz,

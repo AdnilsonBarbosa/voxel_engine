@@ -1,4 +1,4 @@
-#ifndef GL_EXT_H
+﻿#ifndef GL_EXT_H
 #define GL_EXT_H
 
 // Minimal OpenGL function loader for Windows.
@@ -65,10 +65,13 @@ typedef unsigned int   GLbitfield;
 #define GL_TEXTURE_MIN_FILTER             0x2800
 #define GL_TEXTURE_MAG_FILTER             0x2801
 #define GL_NEAREST                        0x2600
+#define GL_NEAREST_MIPMAP_NEAREST         0x2700
 #define GL_LINEAR                         0x2601
 #define GL_TEXTURE_WRAP_S                 0x2802
 #define GL_TEXTURE_WRAP_T                 0x2803
 #define GL_CLAMP_TO_EDGE                  0x812F
+#define GL_TEXTURE_MAX_ANISOTROPY_EXT     0x84FE
+#define GL_MAX_TEXTURE_MAX_ANISOTROPY_EXT 0x84FF
 #define GL_UNPACK_ALIGNMENT               0x0CF5
 #define GL_BLEND                          0x0BE2
 #define GL_SRC_ALPHA                      0x0302
@@ -94,6 +97,7 @@ typedef void   (APIENTRY *PFN_glDepthMask)(GLboolean flag);
 typedef void   (APIENTRY *PFN_glViewport)(GLint x, GLint y, GLsizei w, GLsizei h);
 typedef GLenum (APIENTRY *PFN_glGetError)(void);
 typedef const GLubyte* (APIENTRY *PFN_glGetString)(GLenum name);
+typedef void   (APIENTRY *PFN_glGetFloatv)(GLenum pname, GLfloat* params);
 
 // Buffers
 typedef void   (APIENTRY *PFN_glGenBuffers)(GLsizei n, GLuint* buffers);
@@ -144,6 +148,8 @@ typedef void   (APIENTRY *PFN_glDeleteTextures)(GLsizei n, const GLuint* texture
 typedef void   (APIENTRY *PFN_glBindTexture)(GLenum target, GLuint texture);
 typedef void   (APIENTRY *PFN_glTexImage2D)(GLenum target, GLint level, GLint internalformat, GLsizei width, GLsizei height, GLint border, GLenum format, GLenum type, const GLvoid* pixels);
 typedef void   (APIENTRY *PFN_glTexParameteri)(GLenum target, GLenum pname, GLint param);
+typedef void   (APIENTRY *PFN_glTexParameterf)(GLenum target, GLenum pname, GLfloat param);
+typedef void   (APIENTRY *PFN_glGenerateMipmap)(GLenum target);
 typedef void   (APIENTRY *PFN_glActiveTexture)(GLenum texture);
 typedef void   (APIENTRY *PFN_glPixelStorei)(GLenum pname, GLint param);
 typedef void   (APIENTRY *PFN_glBlendFunc)(GLenum sfactor, GLenum dfactor);
@@ -165,6 +171,7 @@ inline PFN_glDepthMask               pglDepthMask               = nullptr;
 inline PFN_glViewport                pglViewport                = nullptr;
 inline PFN_glGetError                pglGetError                = nullptr;
 inline PFN_glGetString               pglGetString               = nullptr;
+inline PFN_glGetFloatv               pglGetFloatv               = nullptr;
 inline PFN_glGenBuffers              pglGenBuffers              = nullptr;
 inline PFN_glDeleteBuffers           pglDeleteBuffers           = nullptr;
 inline PFN_glBindBuffer              pglBindBuffer              = nullptr;
@@ -201,6 +208,8 @@ inline PFN_glDeleteTextures          pglDeleteTextures          = nullptr;
 inline PFN_glBindTexture             pglBindTexture             = nullptr;
 inline PFN_glTexImage2D              pglTexImage2D              = nullptr;
 inline PFN_glTexParameteri           pglTexParameteri           = nullptr;
+inline PFN_glTexParameterf           pglTexParameterf           = nullptr;
+inline PFN_glGenerateMipmap            pglGenerateMipmap          = nullptr;
 inline PFN_glActiveTexture           pglActiveTexture           = nullptr;
 inline PFN_glPixelStorei             pglPixelStorei             = nullptr;
 inline PFN_glBlendFunc               pglBlendFunc               = nullptr;
@@ -221,6 +230,7 @@ inline bool gl_load_extensions() {
     pglViewport   = (PFN_glViewport)SDL_GL_GetProcAddress("glViewport");
     pglGetError   = (PFN_glGetError)SDL_GL_GetProcAddress("glGetError");
     pglGetString  = (PFN_glGetString)SDL_GL_GetProcAddress("glGetString");
+    pglGetFloatv  = (PFN_glGetFloatv)SDL_GL_GetProcAddress("glGetFloatv");
     pglDrawElements = (PFN_glDrawElements)SDL_GL_GetProcAddress("glDrawElements");
     pglDrawArrays   = (PFN_glDrawArrays)SDL_GL_GetProcAddress("glDrawArrays");
 
@@ -263,6 +273,8 @@ inline bool gl_load_extensions() {
     pglBindTexture    = (PFN_glBindTexture)SDL_GL_GetProcAddress("glBindTexture");
     pglTexImage2D     = (PFN_glTexImage2D)SDL_GL_GetProcAddress("glTexImage2D");
     pglTexParameteri  = (PFN_glTexParameteri)SDL_GL_GetProcAddress("glTexParameteri");
+    pglTexParameterf  = (PFN_glTexParameterf)SDL_GL_GetProcAddress("glTexParameterf");
+    pglGenerateMipmap = (PFN_glGenerateMipmap)SDL_GL_GetProcAddress("glGenerateMipmap");
     pglActiveTexture  = (PFN_glActiveTexture)SDL_GL_GetProcAddress("glActiveTexture");
     pglPixelStorei    = (PFN_glPixelStorei)SDL_GL_GetProcAddress("glPixelStorei");
     pglBlendFunc      = (PFN_glBlendFunc)SDL_GL_GetProcAddress("glBlendFunc");

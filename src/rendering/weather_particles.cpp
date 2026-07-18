@@ -1,4 +1,4 @@
-#include "weather_particles.h"
+﻿#include "weather_particles.h"
 #include "platform.h"
 #include <cstdlib>
 #include <cmath>
@@ -315,7 +315,7 @@ void WeatherParticles::update(float dt, float rainRate, float snowRate, float wi
     // On mobile, reduce maxRain_ via init(cfg.mobileMaxParticles) instead of here.
     // Desktop always uses the full buffer so rain is dense enough to be visible.
     int hardCap    = maxRain_;
-    int targetCount = (int)(rate * (float)hardCap * 0.7f);
+    int targetCount = (int)(rate * (float)hardCap * 0.7f * visualDensity_);
 
     // ── Spawn rain particles ─────────────────────────────────────────────────
     if (rainCount_ < targetCount) {

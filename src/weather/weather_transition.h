@@ -60,11 +60,11 @@ public:
     float transitionDur(WeatherType from, WeatherType to) const {
         int f = (int)from, t = (int)to;
         // Extremes: Thunderstorm or Blizzard transitions take longer
-        if (f >= 6 || t >= 6) return 90.0f;
+        if (f >= 6 || t >= 6) return 45.0f;
         // Fog building/lifting is slow
-        if (f >= 7 || t >= 7) return 60.0f;
+        if (f >= 7 || t >= 7) return 30.0f;
         // Normal
-        return 45.0f;
+        return 20.0f;
     }
 };
 

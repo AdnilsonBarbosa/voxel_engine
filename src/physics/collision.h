@@ -30,7 +30,7 @@ static inline int fastSign(float v)  { return (v > 0) ? 1 : ((v < 0) ? -1 : 0); 
 static inline bool isSolidAt(int bx, int by, int bz, const ChunkManager& world) {
     if (by < 0 || by >= 128) return false;
     uint8_t blk = world.getBlock((float)bx + 0.5f, (float)by + 0.5f, (float)bz + 0.5f);
-    return blockIsOpaque(blk);
+    return blockIsSolid(blk);
 }
 
 // ── Ground check: 5 points below feet ──────────────────────────────────────
@@ -135,6 +135,41 @@ static inline void resolveAllOverlaps(PhysicsPlayer& p, const ChunkManager& worl
     }
 }
 
+// ── Per-axis sweep: move along ONE axis, clamp against the first solid ──────
+// Classic voxel collision: resolving each axis on its own can never push the
+// player sideways out of a fall or pop them through a floor corner.
+static inline void stepAxis(PhysicsPlayer& p, const ChunkManager& world,
+                            float dx, float dy, float dz) {
+    const float hw = PLAYER_WIDTH * 0.5f;
+    const float EPS = 0.001f;
+    p.x += dx; p.y += dy; p.z += dz;
+
+    const float minX = p.x - hw, maxX = p.x + hw;
+    const float minY = p.y,      maxY = p.y + PLAYER_HEIGHT;
+    const float minZ = p.z - hw, maxZ = p.z + hw;
+    const int bx0 = fastFloor(minX), bx1 = fastFloor(maxX - EPS);
+    const int by0 = fastFloor(minY), by1 = fastFloor(maxY - EPS);
+    const int bz0 = fastFloor(minZ), bz1 = fastFloor(maxZ - EPS);
+
+    for (int bx = bx0; bx <= bx1; bx++)
+    for (int by = by0; by <= by1; by++)
+    for (int bz = bz0; bz <= bz1; bz++) {
+        if (!isSolidAt(bx, by, bz, world)) continue;
+        if (maxX <= (float)bx || minX >= (float)(bx + 1)) continue;
+        if (maxY <= (float)by || minY >= (float)(by + 1)) continue;
+        if (maxZ <= (float)bz || minZ >= (float)(bz + 1)) continue;
+
+        if (dx > 0)      { p.x = (float)bx - hw - EPS;            p.vx = 0; }
+        else if (dx < 0) { p.x = (float)(bx + 1) + hw + EPS;      p.vx = 0; }
+        if (dy > 0)      { p.y = (float)by - PLAYER_HEIGHT - EPS; p.vy = 0; }
+        else if (dy < 0) { p.y = (float)(by + 1) + EPS;
+                           p.vy = 0; p.grounded = true; }
+        if (dz > 0)      { p.z = (float)bz - hw - EPS;            p.vz = 0; }
+        else if (dz < 0) { p.z = (float)(bz + 1) + hw + EPS;      p.vz = 0; }
+        return;   // clamped against the limiting block — axis resolved
+    }
+}
+
 // ── Resolve player collision ───────────────────────────────────────────────
 static inline void resolveCollision(PhysicsPlayer& p, const ChunkManager& world, float dt) {
     // Apply gravity
@@ -143,16 +178,26 @@ static inline void resolveCollision(PhysicsPlayer& p, const ChunkManager& world,
 
     p.grounded = false;
 
-    // Move on each axis independently
-    p.x += p.vx * dt;
-    p.z += p.vz * dt;
-    p.y += p.vy * dt;
+    // Substep so a long frame (hitch) can never tunnel through a block:
+    // each substep moves at most ~0.4 blocks on the fastest axis.
+    float maxV = fastAbs(p.vx);
+    if (fastAbs(p.vy) > maxV) maxV = fastAbs(p.vy);
+    if (fastAbs(p.vz) > maxV) maxV = fastAbs(p.vz);
+    int steps = 1 + (int)(maxV * dt / 0.4f);
+    if (steps > 8) steps = 8;
+    const float sdt = dt / (float)steps;
 
-    // Resolve ALL overlaps (pushes out on shortest axis)
+    for (int s = 0; s < steps; s++) {
+        stepAxis(p, world, p.vx * sdt, 0.0f, 0.0f);
+        stepAxis(p, world, 0.0f, 0.0f, p.vz * sdt);
+        stepAxis(p, world, 0.0f, p.vy * sdt, 0.0f);
+    }
+
+    // Safety net for teleports/spawns that embed the player in solid ground.
     resolveAllOverlaps(p, world);
 
-    // Ground check
-    p.grounded = isOnGround(p.x, p.y, p.z, world);
+    // Ground check (keeps grounded state stable on slopes/edges)
+    if (!p.grounded) p.grounded = isOnGround(p.x, p.y, p.z, world);
 
     // Safety
     if (p.y < 0) { p.y = 0; p.vy = 0; p.grounded = true; }
@@ -185,7 +230,8 @@ static inline bool raycastVoxel(const ChunkManager& world,
     int faceX = 0, faceY = 0, faceZ = 0;
     for (int i = 0; i < 200 && t <= maxDist; i++) {
         uint8_t blk = world.getBlock((float)x + 0.5f, (float)y + 0.5f, (float)z + 0.5f);
-        if (blk != BLOCK_AIR) {
+        // Water never captures the ray — aim through it at the bed below.
+        if (blk != BLOCK_AIR && blk != BLOCK_WATER) {
             result.blockX = x; result.blockY = y; result.blockZ = z;
             result.faceX = faceX; result.faceY = faceY; result.faceZ = faceZ;
             result.hitDist = t;

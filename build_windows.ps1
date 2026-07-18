@@ -31,6 +31,7 @@ if (-not (Test-Path "$SDL2_INC\SDL.h")) {
 if ($Action -eq "clean") {
     Write-Host "Cleaning build artifacts..."
     Remove-Item -Force -ErrorAction SilentlyContinue voxel_engine.exe, *.obj, *.pdb, *.ilk
+    Remove-Item -Recurse -Force -ErrorAction SilentlyContinue build
     Write-Host "Done."
     exit 0
 }
@@ -38,11 +39,15 @@ if ($Action -eq "clean") {
 # ── Build ───────────────────────────────────────────────────────────────────
 Write-Host "Building Voxel Engine for Windows (SDL2 + OpenGL)..." -ForegroundColor Cyan
 
+# Keep MSVC intermediates out of the project root
+New-Item -ItemType Directory -Force "$PSScriptRoot\build" | Out-Null
+
 $buildCmd = @"
 call "$vcvars" -arch=amd64 >nul 2>&1
 cl.exe /std:c++17 /O2 /W3 /EHsc /DNDEBUG /D_CRT_SECURE_NO_WARNINGS ^
+    /Fo"build\\" ^
     /I"$SDL2_INC" ^
-    /I"src\core" /I"src\world" /I"src\rendering" /I"src\utils" /I"src\time" /I"src\weather" /I"src\craft" /I"src\ui" /I"src\physics" ^
+    /I"src\core" /I"src\world" /I"src\rendering" /I"src\utils" /I"src\time" /I"src\weather" /I"src\craft" /I"src\ui" /I"src\physics" /I"src\seasons" ^
     src\main.cpp src\core\renderer.cpp src\rendering\sky.cpp ^
     src\rendering\texture_atlas.cpp src\rendering\debug_overlay.cpp ^
     src\rendering\weather_particles.cpp ^

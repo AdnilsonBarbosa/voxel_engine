@@ -1,4 +1,4 @@
-#include "renderer.h"
+﻿#include "renderer.h"
 #include "platform.h"
 #include <cstdio>
 
@@ -63,11 +63,79 @@ void main() {
     // that stays bright even in dark caves. Take the brighter of the two.
     float sky = mix(uCaveAmbient, uSunLight, vSky);
     float env = max(sky, vBlock);
-    vec3 col = tex.rgb * vLight * env;                // texture × (dir+AO) × light
+    vec3 col = tex.rgb * vLight * env;                // texture Ã— (dir+AO) Ã— light
+    // Gentle filmic-ish lift: deepens shadows, saves highlights from clipping.
+    col = col * (1.05 + 0.25 * col) / (1.0 + 0.30 * col);
     float fog = clamp((vDist - uFogStart) / (uFogEnd - uFogStart), 0.0, 1.0);
-    fragColor = vec4(mix(col, uAmbient, fog), 1.0);
+    // Semi-transparent texels (water) keep their alpha â†’ seabed shows through.
+    fragColor = vec4(mix(col, uAmbient, fog), tex.a);
 }
 )";
+
+#ifdef __ANDROID__
+static const char* VS_SRC_GLES = R"(
+#version 100
+precision highp float;
+attribute vec3 aPosition;
+attribute vec2 aUV;
+attribute vec2 aTile;
+attribute float aLight;
+attribute float aSky;
+attribute float aBlock;
+attribute float aWave;
+varying vec2 vUV;
+varying vec2 vTile;
+varying float vLight;
+varying float vSky;
+varying float vBlock;
+varying float vDist;
+uniform mat4 uMVP;
+uniform float uTime;
+uniform vec3 uCamPos;
+void main() {
+    vUV = aUV;
+    vTile = aTile;
+    vLight = aLight;
+    vSky = aSky;
+    vBlock = aBlock;
+    vec3 p = aPosition;
+    p.y += sin(uTime * 1.5 + p.x * 0.6 + p.z * 0.6) * 0.08 * aWave;
+    vDist = distance(p, uCamPos);
+    gl_Position = uMVP * vec4(p, 1.0);
+}
+)";
+
+static const char* FS_SRC_GLES = R"(
+#version 100
+precision mediump float;
+varying vec2 vUV;
+varying vec2 vTile;
+varying float vLight;
+varying float vSky;
+varying float vBlock;
+varying float vDist;
+uniform sampler2D uAtlas;
+uniform float uTileSize;
+uniform float uTexel;
+uniform vec3 uAmbient;
+uniform float uFogStart;
+uniform float uFogEnd;
+uniform float uSunLight;
+uniform float uCaveAmbient;
+void main() {
+    vec2 f = fract(vUV);
+    vec2 uv = vTile + uTexel * 0.5 + f * (uTileSize - uTexel);
+    vec4 tex = texture2D(uAtlas, uv);
+    if (tex.a < 0.5) discard;
+    float sky = mix(uCaveAmbient, uSunLight, vSky);
+    float env = max(sky, vBlock);
+    vec3 col = tex.rgb * vLight * env;
+    col = col * (1.05 + 0.25 * col) / (1.0 + 0.30 * col);
+    float fog = clamp((vDist - uFogStart) / max(uFogEnd - uFogStart, 0.001), 0.0, 1.0);
+    gl_FragColor = vec4(mix(col, uAmbient, fog), tex.a);
+}
+)";
+#endif
 
 static GLuint compile_shader(GLenum type, const char* src) {
     GLuint s = pglCreateShader(type);
@@ -90,8 +158,13 @@ void Renderer::init() {
     pglEnable(GL_DEPTH_TEST);
     pglDepthFunc(GL_LEQUAL);
 
+#ifdef __ANDROID__
+    GLuint vs = compile_shader(GL_VERTEX_SHADER,   VS_SRC_GLES);
+    GLuint fs = compile_shader(GL_FRAGMENT_SHADER, FS_SRC_GLES);
+#else
     GLuint vs = compile_shader(GL_VERTEX_SHADER,   VS_SRC);
     GLuint fs = compile_shader(GL_FRAGMENT_SHADER, FS_SRC);
+#endif
     if (!vs || !fs) { SDL_Log("Shader compilation failed!"); return; }
 
     program = pglCreateProgram();
@@ -137,6 +210,10 @@ void Renderer::init() {
 
 void Renderer::beginFrame() {
     pglClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    // World pass blends: opaque texels are alpha=1 (no cost), water texels are
+    // translucent so the seabed shows through. Depth writes stay on.
+    pglEnable(GL_BLEND);
+    pglBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 }
 
 void Renderer::setAtlas(GLuint tex, float tileSizeUV, float texelUV) {
@@ -169,3 +246,6 @@ void Renderer::setFrame(const float* mvp, float time,
 void Renderer::cleanup() {
     if (program) { pglDeleteProgram(program); program = 0; }
 }
+
+
+

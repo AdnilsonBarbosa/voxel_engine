@@ -52,7 +52,8 @@ public:
                 uint8_t biome,
                 float hourOfDay = 12.0f, // 0-24 (for FogManager)
                 float playerY   = 64.0f, // player altitude
-                float seaLevel  = 64.0f) // terrain base height
+                float seaLevel  = 64.0f, // terrain base height
+                float seasonWindMult = 1.0f) // SeasonManager wind scaling
     {
         // ── 1. Smooth lerp every frame ────────────────────────────────────
         transAccum_ = fminf(transAccum_ + dt, transitionDur_);
@@ -75,6 +76,16 @@ public:
             float humidPc = humidityFor(climate.humidity, currentType_);
 
             WeatherType raw  = ctrl_.pickNext(currentType_, climate, cal.season, rng_);
+#ifdef __ANDROID__
+            // Android test cycle must visibly change state instead of drawing
+            // the same weather again after an expiry.
+            if (raw == currentType_) {
+                const int order[] = { 0, 2, 4, 5, 6, 7, 8, 9, 10 };
+                int at = 0;
+                for (int i = 0; i < 9; ++i) if (order[i] == (int)currentType_) { at = i; break; }
+                raw = (WeatherType)order[(at + 1) % 9];
+            }
+#endif
             WeatherType next = transition_.resolve(currentType_, raw); // plausibility check
             float       intn = ctrl_.pickIntensity(next, rng_);
             double      dur  = ctrl_.pickDurationSecs(next, rng_);
@@ -93,7 +104,7 @@ public:
 
         // ── 3. Sub-manager updates ────────────────────────────────────────
         wind_.update(dt,
-                     displayed_.windSpeed,
+                     displayed_.windSpeed * seasonWindMult,
                      displayed_.windDir,
                      displayed_.type == WeatherType::Thunderstorm ||
                      displayed_.type == WeatherType::Blizzard);
@@ -217,6 +228,10 @@ public:
             from_ = to_; displayed_ = to_;
             displayed_.transition = 1.0f;
             SDL_Log("[Weather] Loaded: %s (%.0f%%)", weatherName(t), h.intensity * 100.0f);
+#ifdef __ANDROID__
+            // Re-anchor the saved weather with the short Android test cycle.
+            expiresAt_ = -1.0;
+#endif
         }
         return ok;
     }
